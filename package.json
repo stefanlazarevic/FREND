@@ -1,0 +1,28 @@
+{
+  "name": "front_template",
+  "version": "1.0.0",
+  "description": "Basic markup for frontend projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefanlazarevic/template.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "gulp",
+    "jade",
+    "es6",
+    "sass"
+  ],
+  "author": "Stefan Lazarevic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stefanlazarevic/template/issues"
+  },
+  "homepage": "https://github.com/stefanlazarevic/template#readme"
+}
