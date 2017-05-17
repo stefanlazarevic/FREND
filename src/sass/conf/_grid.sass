@@ -1,0 +1,32 @@
+$grid-size: 12
+
+$mobile-port: "screen and (max-width: 575px)"
+$mobile-land: "screen and (max-width: 767px)"
+$tablet-port: "screen and (max-width: 991px)"
+$tablet-land: "screen and (max-width: 1199px)"
+
+
+=generate-grid-columns($column)
+  .col
+    position: relative
+
+  // @media #{mobile-port}
+  @for $i from 1 through $grid-size
+
+    .col-tl-#{$i}
+      @extend .col
+      width: percentage($i / $grid-size * 100)
+
+    .col-tp-#{$i}
+      @extend .col
+      width: percentage($i / $grid-size * 100)
+
+    .col-ml-#{$i}
+      @extend .col
+      width: percentage($i / $grid-size * 100)
+
+    .col-mp-#{$i}
+      @extend .col
+      width: percentage($i / $grid-size * 100)
+
++generate-grid-columns($grid-size)
