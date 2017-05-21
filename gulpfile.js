@@ -3,7 +3,14 @@ const gulp = require('gulp'),
       babel = require('gulp-babel'),
       jade = require('gulp-jade'),
       rename = require('gulp-rename'),
-      livereload = require('gulp-livereload');
+      livereload = require('gulp-livereload'),
+      uglify = require('gulp-uglify');
+
+const tasks = [
+  'jade',
+  'sass',
+  'scripts'
+];
 
 gulp.task('jade', function() {
   gulp.src('src/index.jade')
@@ -16,9 +23,9 @@ gulp.task('jade', function() {
 
 gulp.task('sass', function() {
   gulp.src('src/sass/app.sass')
-      .pipe(sass(
-        {outputStyle: 'compressed'}
-      ).on('error', sass.logError))
+      .pipe(sass({
+          outputStyle: 'compressed'
+      }).on('error', sass.logError))
       .pipe(rename({
         suffix: ".min",
       }))
@@ -26,10 +33,23 @@ gulp.task('sass', function() {
       .pipe(livereload());
 });
 
+gulp.task('scripts', function(){
+  gulp.src('src/js/app.js')
+      .pipe(babel({
+        presets: ['es2015']
+      }))
+      .pipe(uglify())
+      .pipe(rename({
+        suffix: '.min'
+      }))
+      .pipe(gulp.dest('dist/js/'))
+      .pipe(livereload());
+});
+
 gulp.task('watch', function() {
   livereload.listen();
-  gulp.watch('src/**', ['jade', 'sass']);
+  gulp.watch('src/**', tasks);
 });
 
 
-gulp.task('default', ['jade', 'sass']);
+gulp.task('default', tasks);

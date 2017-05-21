@@ -1,0 +1,76 @@
+//Must be inline. Bad sass syntax.
+$map: (desktop: (prefix: '-',breakpoint: 1200px,target: min), tablet-land: (prefix: -tl-,breakpoint: 1199px,target: max), tablet-port: (prefix: -tp-,breakpoint: 991px,target: max), mobile-land: (prefix: -ml-,breakpoint: 767px,target: max), mobile-port: (prefix: -mp-,breakpoint: 576px,target: max))
+
+$mobile-port: "screen and (max-widtht: 575px)"
+$mobile-land: "screen and (max-width: 767px)"
+$tablet-port: "screen and (max-width: 991px)"
+$tablet-land: "screen and (max-width: 1199px)"
+$desktop: "screen and (min-width: 1200px)"
+
+.container
+  position: relative
+  margin:
+    left: auto
+    right: auto
+  padding:
+    left: 15px
+    right: 15px
+
+  &::before,
+  &::after
+    @extend .clearfix
+
+  @media #{$tablet-port}
+    width: 960px
+    max-width: 100%
+
+  @media #{$mobile-land}
+    width: 720px
+    max-width: 100%
+
+  @media #{$mobile-port}
+    width: 540px
+    max-width: 100%
+
+.container-full
+  position: relative
+  width: 100%
+  margin:
+    left: auto
+    right: auto
+  &::before,
+  &::after
+    @extend .clearfix
+
+.row
+  &:before,
+  &:after
+    @extend .clearfix
+
+.col
+  position: relative
+  min-height: 1px
+  float: left
+  padding:
+    left: 15px
+    right: 15px
+
+.clearfix
+  display: table
+  content: " "
+  clear: both
+
+
+@for $column from 1 through $grid-size
+  .col-#{$column}
+    @extend .col
+    width: $column / $grid-size * 100%
+
+@each $device, $args in $map
+  @for $column from 1 through $grid-size
+    .col#{map-get($args, prefix)}#{$column}
+      @extend .col
+  @media screen and (#{map-get($args, target)}-width: #{map-get($args, breakpoint)})
+    @for $column from 1 through $grid-size
+      .col#{map-get($args, prefix)}#{$column}
+        width: $column / $grid-size * 100%

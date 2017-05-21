@@ -1,0 +1,113 @@
+*,
+*::before,
+*::after
+  box-sizing: border-box
+
+@-ms-viewport
+  width: device-width
+
+html
+  font:
+    family: $default-font
+    weight: normal
+  line-height: 1.15
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+
+body
+  margin: 0
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-rendering: optimizeLegibility
+  color: $base-text-color
+
+img
+  border: 0
+  vertical-align: middle
+
+label
+  cursor: pointer
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"]
+  -webkit-appearance: button
+     -moz-appearance: button
+          appearance: button
+  cursor: pointer
+  -webkit-user-select: none
+     -moz-user-select: none
+      -ms-user-select: none
+          user-select: none
+  vertical-align: middle
+  transition: $default-btn-transition
+
+input:disabled,
+input[readonly],
+textarea:disabled,
+textarea[readonly]
+  cursor: not-allowed
+  filter: alpha(opacity=65)
+  -webkit-box-shadow: none
+          box-shadow: none
+  opacity: .65
+  pointer-events: none
+
+a
+  text-decoration: none
+  cursor: pointer
+  background-color: transparent
+  transition: $default-btn-transition
+  &:active,
+  &:hover,
+  &:focus
+    outline: 0
+
+textarea
+  overflow: auto
+  resize: vertical
+  margin: 0
+
+table
+  border-spacing: 0
+  border-collapse: collapse
+
+p
+  margin-bottom: 1rem
+  font-weight: 100
+
+pre,
+code
+  white-space: pre-wrap
+  word-break: break-all
+  word-wrap: break-word
+
+h1
+  font-weight: 100
+  line-height: 1.4
+  letter-spacing: .5px
+  margin-top: 0
+  margin-bottom: 0.5rem
+  font-size: 2.1rem
+
+h2
+  @extend h1
+  font-size: 1.9rem
+
+h3
+  @extend h1
+  font-size: 1.7rem
+
+h4
+  @extend h1
+  font-size: 1.5rem
+
+h5
+  @extend h1
+  font-size: 1.3rem
+
+h6
+  @extend h1
+  font-size: 1.1rem

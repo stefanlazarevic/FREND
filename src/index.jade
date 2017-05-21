@@ -2,11 +2,20 @@
 html(lang="en")
   head
     meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0", shrink-to-fit="no")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     meta(name="author" content="Stefan Lazarevic")
     link(rel="stylesheet", href="css/app.min.css")
     title Template title
   body
+    .container
+      .row
+        .col-4.col-tp-6.col-ml-12#left
+          h2 Hello
+        .col-4.col-tp-6.col-ml-12#middle
+          h2 World
+        .col-4.col-tp-12.col-ml-12#right
+          h2 Right
+    script(src="js/app.min.js")
     script(src="http://localhost:35729/livereload.js")
   
