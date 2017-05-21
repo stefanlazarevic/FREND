@@ -1,0 +1,49 @@
+@charset "UTF-8"
+// Create margin for element using standard long markup
+// Accepts null as parametar
+// Syntax +margin(top right bottom left)
+=margin($positions: null null null null)
+  $sides: (top: nth($positions, 1), right: nth($positions, 2), bottom: nth($positions, 3), left: nth($positions, 4))
+  @each $side, $value in $sides
+    @if $value != null
+      margin-#{$side}: $value
+
+// Create position with offset from top, right, bottom and left position.
+=position($position: relative, $coordinates: null null null null)
+  position: $position
+  $offsets: (top: nth($coordinates, 1), right: nth($coordinates, 2), bottom: nth($coordinates, 3), left: nth($coordinates, 4))
+  @each $pos, $value in $offsets
+    @if $value != null
+      #{$pos}: $value
+
+// Function to create width and height
+=dimension($width: auto, $height: null)
+  @if $height == null
+    $height: $width
+  width: $width
+  height: $height
+
+=word-wrap($wrap: break-word)
+  overflow-wrap: $wrap
+  word-wrap: $wrap
+  @if $wrap == break-word
+    word-break: break-all
+  @else
+    word-break: $wrap
+
+// Function used to push elements by column size.
+=offset($direction, $column)
+  margin-#{$direction}: $column / $grid-size * 100%
+
+// Opacity supported by old IE
+=opacity($value)
+  $v: $value * 100
+  filter: alpha(opacity=$v)
+  opacity: $value
+
+// Make text 3 dotted if it cannot fit.
+// Not working on multiple lines.
+=text-overflow
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap

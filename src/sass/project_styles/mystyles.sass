@@ -5,7 +5,11 @@
 #middle
   @extend #left
   background: $yellow
+  h2
+    +position(absolute, 50% null null 50%)
+    +dimension(100px, auto)
 
 #right
   @extend #left
+  +offset(right, 2)
   background: $red

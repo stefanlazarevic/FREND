@@ -55,6 +55,10 @@ textarea[readonly]
   opacity: .65
   pointer-events: none
 
+input::-ms-clear
+    display: none
+
+
 a
   text-decoration: none
   cursor: pointer
@@ -70,9 +74,28 @@ textarea
   resize: vertical
   margin: 0
 
+ol,
+ul
+	list-style: none
+  padding: 0
+
+del
+  text-decoration: line-through
+
+hr
+  display: block
+  height: 1px
+  border: 0
+  border-top: 1px solid $hr-base-color
+  margin: 1em 0
+  padding: 0
+
 table
   border-spacing: 0
   border-collapse: collapse
+
+strong
+	font-weight: bold
 
 p
   margin-bottom: 1rem
@@ -83,6 +106,25 @@ code
   white-space: pre-wrap
   word-break: break-all
   word-wrap: break-word
+
+article,
+aside,
+details,
+footer,
+header,
+menu,
+nav,
+section
+	display: block
+
+// From: http://stackoverflow.com/a/18853002/1147859
+select:-moz-focusring
+    color: transparent
+    text-shadow: 0 0 0 #000
+
+input,
+select
+  vertical-align: middle
 
 h1
   font-weight: 100
@@ -111,3 +153,8 @@ h5
 h6
   @extend h1
   font-size: 1.1rem
+
+.clearfix:after
+  content: " "
+  display: block
+  clear: both
