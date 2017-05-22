@@ -20,7 +20,17 @@ When everything is done run ```gulp watch``` from terminal and start building yo
 ### Version 1.1.0 Update
 Jade folder structure changed.
   * Index.jade and pages folder compiles only with gulp into the root dist folder.
-  
+  * Help snippet -> Use this snippet to start creating new jade page.
+  ```
+  extends ../2-layouts/app.jade
+
+  block title
+    title About us
+
+  block content
+    main(role="main").container
+  ```
+
 Sass folder structure changed.
 
 Contact: https://www.linkedin.com/in/stefan-lazarevi%C4%87-630520128/
