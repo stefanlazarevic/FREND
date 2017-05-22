@@ -16,7 +16,7 @@ After you get template cd inside and run following command
 npm install
 ```
 When everything is done run ```gulp watch``` from terminal and start building your app!
-
+------
 ### Version 1.1.0 Update
 Jade folder structure changed.
   * Index.jade and pages folder compiles only with gulp into the root dist folder.
@@ -32,7 +32,7 @@ Jade folder structure changed.
   ```
 
 Sass folder structure changed.
-
+------
 Contact: https://www.linkedin.com/in/stefan-lazarevi%C4%87-630520128/
 
 Contact: stefanlazarevic.contact@gmail.com
