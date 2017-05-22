@@ -47,3 +47,30 @@
   overflow: hidden
   text-overflow: ellipsis
   white-space: nowrap
+
+// Apply style to all even childs of element.
+=even
+  &:nth-child(even)
+    @content
+
+// Apply style to all odd childs of element.
+=odd
+  &:nth-child(odd)
+    @content
+
+// Responsive mixins
+=onMobilePort
+  @media #{$mobile-port}
+    @content
+
+=onMobileLand
+  @media #{$mobile-land}
+    @content
+
+=onTabletPort
+  @media #{$tablet-port}
+    @content
+
+=onTabletLand
+  @media #{$tablet-land}
+    @content
