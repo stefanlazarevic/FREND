@@ -1,0 +1,16 @@
+include ../0-includes/variables.jade
+include ../1-mixins/mixins.jade
+<!DOCTYPE html>
+html(lang="en")
+  head
+    include ../0-includes/meta.jade
+    include ../0-includes/socialMeta.jade
+    block title
+    include ../0-includes/links.jade  
+  body
+    include ./_header.jade
+    include ./_navigation.jade
+    block content
+    include ./_footer.jade
+    include ../0-includes/scripts.jade
+  

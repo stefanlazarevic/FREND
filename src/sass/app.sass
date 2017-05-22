@@ -1,23 +1,26 @@
 // Base configuration sass file.
-@import "./conf/conf"
-
-// File for additional variables.
-@import "./partials/_variables"
-
-// Store all color variables in here.
-@import "./partials/_colors"
+@import "./0-config/conf"
 
 // Helper functions
-@import "./mixins/mixin"
+@import "./1-mixins/mixin"
+
+// File for additional variables.
+@import "./2-includes/_variables"
+
+// Store all color variables in here.
+@import "./2-includes/_colors"
 
 // HTML Reset file.
-@import "./partials/_reset"
+@import "./2-includes/_reset"
 
 // CSS Grid generator.
-@import "./partials/_grid"
+@import "./2-includes/_grid"
 
 // All site fonts.
-@import "./partials/_font"
+@import "./2-includes/_font"
+
+// All side layouts
+@import "./3-layouts/master"
 
 // Project custom styles
-@import "./project_styles/mystyles"
+@import "./5-base/mystyles"

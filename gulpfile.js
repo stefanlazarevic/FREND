@@ -15,12 +15,14 @@ const tasks = [
 ];
 
 gulp.task('jade', function() {
-  gulp.src('src/index.jade')
-      .pipe(jade({
-        pretty: true
-      }).on('error', console.error.bind(console)))
-      .pipe(gulp.dest('dist/'))
-      .pipe(livereload());
+  gulp.src([
+    'src/jade/3-pages/**/*.jade', 
+    'src/jade/index.jade'
+  ]).pipe(jade({
+      pretty: true
+    }).on('error', console.error.bind(console)))
+    .pipe(gulp.dest('dist/'))
+    .pipe(livereload());
 });
 
 gulp.task('sass', function() {

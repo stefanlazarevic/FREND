@@ -1,4 +1,4 @@
-# FrontEnd Startup template
+# FrontEnd Startup template (v1.1.0)
 ## Technologies
 - Jade
 - Sass
@@ -18,4 +18,5 @@ npm install
 When everything is done run ```gulp watch``` from terminal and start building your app!
 
 Contact: https://www.linkedin.com/in/stefan-lazarevi%C4%87-630520128/
+
 Contact: stefanlazarevic.contact@gmail.com

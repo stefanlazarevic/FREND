@@ -1,6 +1,6 @@
 {
   "name": "front_template",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Basic markup for frontend projects.",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,8 @@
     "gulp",
     "jade",
     "es6",
-    "sass"
+    "sass",
+    "font-awesome"
   ],
   "author": "Stefan Lazarevic",
   "license": "MIT",
