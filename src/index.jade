@@ -1,16 +1,17 @@
+include ./jade/helper/variables.jade
 <!DOCTYPE html>
 html(lang="en")
   head
     meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0", shrink-to-fit="no")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0" shrink-to-fit="no")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
     
     title Template title
     meta(name="author" content="Stefan Lazarevic")
     meta(name="description" content="")
     meta(name="Copyright" content="Stefan Lazarevic 2017")
     
-    link(rel="shortcut icon", href="#")
+    link(rel="shortcut icon" href="#")
     link(rel="apple-touch-icon" href="#")
     
     link(rel="stylesheet", href="css/app.min.css")
@@ -20,7 +21,7 @@ html(lang="en")
     include ./jade/partials/_header.jade
     .container
       main(role="main")
-      
+        
     include ./jade/partials/_footer.jade
     script(src="js/app.min.js")
     script(src="http://localhost:35729/livereload.js")

@@ -9,7 +9,9 @@ const gulp = require('gulp'),
 const tasks = [
   'jade',
   'sass',
-  'scripts'
+  'scripts',
+  'fonts',
+  'images'
 ];
 
 gulp.task('jade', function() {
@@ -46,10 +48,20 @@ gulp.task('scripts', function(){
       .pipe(livereload());
 });
 
+gulp.task('fonts', function(){
+  gulp.src('./src/fonts/**')
+      .pipe(gulp.dest('./dist/fonts/'))
+});
+
+gulp.task('images', function(){
+  gulp.src('./src/img/**/*.{png,jpg,jpeg}')
+      .pipe(gulp.dest('./dist/img/'))
+      .pipe(livereload())
+});
+
 gulp.task('watch', function() {
   livereload.listen();
   gulp.watch('src/**', tasks);
 });
-
 
 gulp.task('default', tasks);
