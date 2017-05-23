@@ -4,3 +4,5 @@ const doc = document,
       warn = console.warn;
 
 import { validator } from './plugins/Validator'
+
+log("Frontend Template Ready")

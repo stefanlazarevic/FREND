@@ -16,6 +16,9 @@
     @if $value != null
       #{$pos}: $value
 
+=translate($x: null, $y: null)
+  transform: translate($x, $y)
+
 // Function to create width and height
 =dimension($width: auto, $height: null)
   @if $height == null
@@ -59,18 +62,18 @@
     @content
 
 // Responsive mixins
-=onMobilePort
-  @media #{$mobile-port}
+=onTabletLand
+  @media #{$tablet-land}
+    @content
+      
+=onTabletPort
+  @media #{$tablet-port}
     @content
 
 =onMobileLand
   @media #{$mobile-land}
     @content
 
-=onTabletPort
-  @media #{$tablet-port}
-    @content
-
-=onTabletLand
-  @media #{$tablet-land}
+=onMobilePort
+  @media #{$mobile-port}
     @content

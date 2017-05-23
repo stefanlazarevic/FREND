@@ -2,34 +2,39 @@ const gulp = require('gulp'),
       sass = require('gulp-sass'),
       jade = require('gulp-jade'),
       rename = require('gulp-rename'),
-      livereload = require('gulp-livereload'),
       uglify = require('gulp-uglify'),
       babelify = require('babelify'),
       browserify = require('browserify'),
-      source = require('vinyl-source-stream');
+      sourcemaps = require('gulp-sourcemaps'),
+      source = require('vinyl-source-stream'),
       buffer = require('vinyl-buffer');
+
+var browserSync = require('browser-sync').create();
 
 const tasks = [
   'jade',
   'sass',
   'scripts',
   'fonts',
-  'images',
+  'images'
 ];
 
 gulp.task('jade', function() {
-  gulp.src([
-    'src/jade/3-pages/**/*.jade',
+  return gulp.src([
+    'src/jade/4-pages/**/*.jade',
     'src/jade/index.jade'
   ]).pipe(jade({
       pretty: true
     }).on('error', console.error.bind(console)))
     .pipe(gulp.dest('dist/'))
-    .pipe(livereload());
+});
+
+gulp.task('jade-watch', ['jade'], function(){
+  browserSync.reload();
 });
 
 gulp.task('sass', function() {
-  gulp.src('src/sass/app.sass')
+  return gulp.src('src/sass/app.sass')
       .pipe(sass({
           outputStyle: 'compressed'
       }).on('error', sass.logError))
@@ -37,23 +42,20 @@ gulp.task('sass', function() {
         suffix: ".min",
       }))
       .pipe(gulp.dest('dist/css/'))
-      .pipe(livereload());
+      .pipe(browserSync.stream())
 });
 
 gulp.task('scripts', function(){
-  browserify({
-    entries: 'src/js/app.js',
-    debug: false
-  })
-  .transform('babelify', {
-		presets: ['es2015']
-	})
-  .bundle()
-  .on('error', console.log)
-  .pipe(source('app.min.js'))
-  .pipe(buffer())
-  .pipe(uglify())
-  .pipe(gulp.dest('./dist/js'))
+  return browserify({entries: './src/js/app.js', debug: true})
+        .transform("babelify", { presets: ["es2015"] })
+        .bundle()
+        .pipe(source('app.min.js'))
+        .pipe(buffer())
+        .pipe(sourcemaps.init())
+        .pipe(uglify())
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest('./dist/js'))
+        .pipe(browserSync.stream())
 });
 
 gulp.task('fonts', function(){
@@ -64,14 +66,18 @@ gulp.task('fonts', function(){
 gulp.task('images', function(){
   gulp.src('./src/img/**/*.{png,jpg,jpeg}')
       .pipe(gulp.dest('./dist/img/'))
-      .pipe(livereload())
 });
 
-gulp.task('watch', function() {
-  livereload.listen({}, function () {
-      console.log('Live Reload server ... OK');
-  });
-  gulp.watch('src/**', tasks);
+gulp.task('serve', ['jade', 'sass', 'scripts'], function() {
+
+    browserSync.init({
+        server: "dist",
+    });
+
+    gulp.watch("src/sass/**/*.sass", ['sass']);
+    gulp.watch("src/jade/**/*.jade", ['jade-watch']);
+    gulp.watch("src/js/**/*.js", ['scripts']);
+
 });
 
-gulp.task('default', tasks);
+gulp.task('default', ['serve']);

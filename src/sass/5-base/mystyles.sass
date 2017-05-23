@@ -1,0 +1,52 @@
+main
+  min-height: 100vh
+
+.welcome-panel
+  width: 100%
+  +position(absolute, 50% null null 50%)
+  +translate(-50%, -50%)
+
+  h1
+    text:
+      transform: uppercase
+      align: center
+    font:
+      family: 'Template'
+      weight: 100
+      size: 3rem
+    letter-spacing: 0.25em
+
+  h2
+    font-size: 22px
+    strong
+      font-weight: 700
+      letter-spacing: 0.3em
+
+  .logo-panel
+    text-align: center
+    legend
+      font:
+        family: Template
+        weight: 600
+      letter-spacing: 0.3em
+      +margin(25px null 40px null)
+
+    a.link
+      display: inline-block
+      color: #a1a1a1
+      margin-right: 20px
+      text-transform: uppercase
+      font-size: 13px
+      &:hover
+        text-decoration: underline
+        color: #586069
+      &::before
+        font-family: FontAwesome
+        display: inline-block
+        width: 20px
+      &:first-child::before
+        content: '\f09b'
+      &:nth-child(2)::before
+        content: '\f0f6'
+      &:last-child::before
+        content: '\f08c'

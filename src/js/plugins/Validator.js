@@ -3,7 +3,7 @@ class Validator{
 
   isNull(v, f = ""){
     if(v === null){
-      err(`Validator: ${f} value is null`)
+      console.error(`Validator: ${f} value is null`)
       return true
     }
     return false
@@ -43,7 +43,7 @@ class Validator{
   isEmail(e){
     if(!this.isNull(e, "Email")){
       const email = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      return email.test(e)
+      return email.test(e);
     }
   }
 
