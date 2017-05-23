@@ -1,7 +1,6 @@
 const doc = document,
       log = console.log,
-      err = console.error;
+      err = console.error,
+      warn = console.warn;
 
-alert("Javascript ready to go!")
-
-log("Console up and running!")
+import { validator } from './plugins/Validator'

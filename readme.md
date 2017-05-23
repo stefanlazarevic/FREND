@@ -1,4 +1,4 @@
-# FrontEnd Startup template (v1.1.0)
+# FrontEnd Startup template (v1.2.0)
 ## Technologies
 - Jade
 - Sass
@@ -19,6 +19,15 @@ When everything is done run ```gulp watch``` from terminal and start building yo
 
 ------
 
+### Version 1.2.0 Update
+Implemented browserify and babelify for ES6 modules.
+
+Bugs: Livereload did not work well so it has been removed from scripts task.
+
+Use standard refresh if you are working with javascript.  
+
+------
+
 ### Version 1.1.0 Update
 Jade folder structure changed.
   * Index.jade and pages folder compiles only with gulp into the root dist folder.
@@ -26,6 +35,7 @@ Jade folder structure changed.
   ```
   extends ../2-layouts/app.jade
 
+  //- Change in variables.jade file
   block title
     title About us
 
