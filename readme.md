@@ -9,7 +9,7 @@ This Frontend template is a development template that will help you start buildi
 ## Quick start
 After you get template cd inside and run following command
 
-Download fresh template for your project [here](https://gitgub.com/stefanlazarevic/template/archive/master.zip)
+Download fresh template for your project [here](https://github.com/stefanlazarevic/template/archive/master.zip)
 
 * Install required npm packages from terminal
 
