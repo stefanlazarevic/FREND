@@ -1,6 +1,9 @@
 # Frontend Startup template
 
-<p align="center"><img src="https://img.shields.io/npm/l/vue.svg" alt="License"></p>
+<p align="center">
+<img src="https://camo.githubusercontent.com/249b22073885159d7356c0ad711c0cab12b8aab6/68747470733a2f2f7472617669732d63692e6f72672f706f73746373732f6175746f70726566697865722e737667" alt="Passing">
+<img src="https://img.shields.io/npm/l/vue.svg" alt="License">
+</p>
 
 ## About Template
 
