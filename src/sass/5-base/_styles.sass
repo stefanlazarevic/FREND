@@ -1,10 +1,11 @@
+// Write your sass in here
+
 main
   min-height: 100vh
 
 .welcome-panel
   width: 100%
-  +position(absolute, 50% null null 50%)
-  +translate(-50%, -50%)
+  +absolute-center
 
   h1
     text:
@@ -17,7 +18,12 @@ main
     letter-spacing: 0.25em
 
   h2
-    font-size: 22px
+    text-align: center
+    font:
+      family: 'Template'
+      weight: 100
+      size: 22px
+    letter-spacing: 0.25em
     strong
       font-weight: 700
       letter-spacing: 0.3em
@@ -29,7 +35,7 @@ main
         family: Template
         weight: 600
       letter-spacing: 0.3em
-      +margin(25px null 40px null)
+      +margin(25px auto 40px auto)
 
     a.link
       display: inline-block

@@ -34,6 +34,8 @@
     "browserify": "^14.3.0",
     "gulp": "^3.9.1",
     "gulp-jade": "^1.1.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.0",

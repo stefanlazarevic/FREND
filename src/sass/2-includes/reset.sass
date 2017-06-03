@@ -27,6 +27,7 @@ img
   vertical-align: middle
 
 label
+  display: block
   cursor: pointer
 
 button,
@@ -37,6 +38,7 @@ input[type="submit"]
      -moz-appearance: button
           appearance: button
   cursor: pointer
+  cursor: hand
   -webkit-user-select: none
      -moz-user-select: none
       -ms-user-select: none
@@ -74,9 +76,12 @@ textarea
   resize: vertical
   margin: 0
 
-ol,
 ul
-	list-style: none
+  list-style: none
+
+ol,
+ul,
+li
   padding: 0
 
 del
@@ -119,39 +124,52 @@ section
 
 // From: http://stackoverflow.com/a/18853002/1147859
 select:-moz-focusring
-    color: transparent
-    text-shadow: 0 0 0 #000
+  color: transparent
+  text-shadow: 0 0 0 #000
 
 input,
 select
   vertical-align: middle
 
-h1
-  font-weight: 100
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6
   line-height: 1.4
   letter-spacing: .5px
-  margin-top: 0
-  margin-bottom: 0.5rem
-  font-size: 2.1rem
-
-h2
-  @extend h1
+  margin:
+    top: 0
+    bottom: 0.5rem
+  font:
+    size: 2.1rem
+    weight: 100
+    
+h2,
+.h2
   font-size: 1.9rem
 
-h3
-  @extend h1
+h3,
+.h3
   font-size: 1.7rem
 
-h4
-  @extend h1
+h4,
+.h4
   font-size: 1.5rem
 
-h5
-  @extend h1
+h5,
+.h5
   font-size: 1.3rem
 
-h6
-  @extend h1
+h6,
+.h6
   font-size: 1.1rem
 
 .clearfix:after

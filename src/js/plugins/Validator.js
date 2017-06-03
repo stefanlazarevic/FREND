@@ -1,4 +1,5 @@
 class Validator{
+
   constructor(){}
 
   isNull(v, f = ""){
@@ -46,7 +47,7 @@ class Validator{
       return email.test(e);
     }
   }
-
+  
   // Useful to check cities and countries
   isCityOrCountry(s){
     sentence = /\b((?!=|\d|\,|\.).)+(.)\b/

@@ -7,7 +7,9 @@ const gulp = require('gulp'),
       browserify = require('browserify'),
       sourcemaps = require('gulp-sourcemaps'),
       source = require('vinyl-source-stream'),
-      buffer = require('vinyl-buffer');
+      buffer = require('vinyl-buffer'),
+      plumber = require('gulp-plumber'),
+      notify = require('gulp-notify');
 
 var browserSync = require('browser-sync').create();
 
@@ -23,7 +25,11 @@ gulp.task('jade', function() {
   return gulp.src([
     'src/jade/4-pages/**/*.jade',
     'src/jade/index.jade'
-  ]).pipe(jade({
+  ]).pipe(plumber({errorHandler: notify.onError({
+    message: "File: <%= error.details %> \nError: <%= error.message %>",
+    title: "Error found in Jade file. (See console for log.)"
+  })}))
+    .pipe(jade({
       pretty: true
     }).on('error', console.error.bind(console)))
     .pipe(gulp.dest('dist/'))
@@ -35,6 +41,10 @@ gulp.task('jade-watch', ['jade'], function(){
 
 gulp.task('sass', function() {
   return gulp.src('src/sass/app.sass')
+      .pipe(plumber({errorHandler: notify.onError({
+        message: "File: <%= error.details %> \nError: <%= error.message %>",
+        title: "Error found in Sass file. (See console for log.)"
+      })}))
       .pipe(sass({
           outputStyle: 'compressed'
       }).on('error', sass.logError))
@@ -49,6 +59,16 @@ gulp.task('scripts', function(){
   return browserify({entries: './src/js/app.js', debug: true})
         .transform("babelify", { presets: ["es2015"] })
         .bundle()
+        .on("error", notify.onError(function (error) {
+          console.log('Error found in JS File');
+          console.error("Location: " + error.filename);
+          console.error("Line: " + error.loc.line);
+          console.error("\nError: " + error.codeFrame + '\n')
+          return {
+            title: "Error in JS file." + error.filename,
+            message: "Line: " + error.loc.line
+          }
+        }))
         .pipe(source('app.min.js'))
         .pipe(buffer())
         .pipe(sourcemaps.init())

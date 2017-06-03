@@ -8,6 +8,12 @@
     @if $value != null
       margin-#{$side}: $value
 
+=padding($positions: null null null null)
+  $sides: (top: nth($positions, 1), right: nth($positions, 2), bottom: nth($positions, 3), left: nth($positions, 4))
+  @each $side, $value in $sides
+    @if $value != null
+      padding-#{$side}: $value
+
 // Create position with offset from top, right, bottom and left position.
 =position($position: relative, $coordinates: null null null null)
   position: $position
@@ -65,7 +71,7 @@
 =onTabletLand
   @media #{$tablet-land}
     @content
-      
+
 =onTabletPort
   @media #{$tablet-port}
     @content
@@ -77,3 +83,29 @@
 =onMobilePort
   @media #{$mobile-port}
     @content
+
+=rotate($deg)
+  transform: rotate($deg)
+  -webkit-transform: rotate($deg)
+
+=scale($points)
+  transform: scale($points)
+  -webkit-transform: scale($points)
+
+=disable-select
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+=absolute-center
+  +position(absolute, 50% null null 50%)
+  +translate(-50%, -50%)
+
+=font($family: null, $size: null, $weight: null)
+  @if $family
+    font-family: $family
+  @if $size
+    font-size: $size
+  @if $weight
+    font-weight: $weight

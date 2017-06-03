@@ -1,7 +1,7 @@
 //Must be inline. Bad sass syntax.
 $map: (desktop: (prefix: '-',breakpoint: 1200px,target: min), tablet-land: (prefix: -tl-,breakpoint: 1199px,target: max), tablet-port: (prefix: -tp-,breakpoint: 991px,target: max), mobile-land: (prefix: -ml-,breakpoint: 767px,target: max), mobile-port: (prefix: -mp-,breakpoint: 576px,target: max))
 
-$mobile-port: "screen and (max-widtht: 575px)"
+$mobile-port: "screen and (max-width: 575px)"
 $mobile-land: "screen and (max-width: 767px)"
 $tablet-port: "screen and (max-width: 991px)"
 $tablet-land: "screen and (max-width: 1199px)"
@@ -16,21 +16,24 @@ $desktop: "screen and (min-width: 1200px)"
     left: 15px
     right: 15px
 
+  @media #{$mobile-port}
+    width: 100%
+
+  @media #{$tablet-port}
+    width: 100%
+    max-width: 750px
+
+  @media #{$tablet-land}
+    width: 100%
+    max-width: 970px
+
+  @media #{$desktop}
+    width: 100%
+    max-width: 1170px
+
   &::before,
   &::after
     @extend .clearfix
-
-  @media #{$tablet-port}
-    width: 960px
-    max-width: 100%
-
-  @media #{$mobile-land}
-    width: 720px
-    max-width: 100%
-
-  @media #{$mobile-port}
-    width: 540px
-    max-width: 100%
 
 .container-full
   position: relative
@@ -43,6 +46,7 @@ $desktop: "screen and (min-width: 1200px)"
     @extend .clearfix
 
 .row
+  position: relative
   &:before,
   &:after
     @extend .clearfix
