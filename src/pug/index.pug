@@ -1,0 +1,18 @@
+extends ./2-layouts/app.pug
+
+//- Change in variables.jade file
+block title
+  title #{indexTitle}
+
+block content
+  main(role="main").container
+    .welcome-panel
+      h1 Frontend Template
+      h2 Created by
+        strong Stefan Lazarevic
+      .logo-panel.container
+        legend From lazy developer for lazy developers.
+        .container
+          a(href="https://github.com/stefanlazarevic").link GitHub
+          a(href="https://github.com/stefanlazarevic/template" target="_blank").link Documentation
+          a(href="https://www.linkedin.com/in/stefan-lazarevi%C4%87-630520128/" target="_blank").link linkedin

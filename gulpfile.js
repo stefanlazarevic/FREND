@@ -1,14 +1,17 @@
 const gulp = require('gulp'),
       sass = require('gulp-sass'),
-      jade = require('gulp-jade'),
+      pug = require('gulp-pug'),
       rename = require('gulp-rename'),
       uglify = require('gulp-uglify'),
       babelify = require('babelify'),
       browserify = require('browserify'),
+      autoprefixer = require('gulp-autoprefixer'),
       sourcemaps = require('gulp-sourcemaps'),
+      imagemin = require('gulp-imagemin'),
       source = require('vinyl-source-stream'),
       buffer = require('vinyl-buffer'),
       plumber = require('gulp-plumber'),
+      todo = require('gulp-todo'),
       notify = require('gulp-notify');
 
 var browserSync = require('browser-sync').create();
@@ -18,24 +21,25 @@ const tasks = [
   'sass',
   'scripts',
   'fonts',
-  'images'
+  'images',
+  'todo'
 ];
 
-gulp.task('jade', function() {
+gulp.task('pug', function() {
   return gulp.src([
-    'src/jade/4-pages/**/*.jade',
-    'src/jade/index.jade'
+    'src/pug/4-pages/**/*.pug',
+    'src/pug/index.pug'
   ]).pipe(plumber({errorHandler: notify.onError({
     message: "File: <%= error.details %> \nError: <%= error.message %>",
     title: "Error found in Jade file. (See console for log.)"
   })}))
-    .pipe(jade({
+    .pipe(pug({
       pretty: true
     }).on('error', console.error.bind(console)))
     .pipe(gulp.dest('dist/'))
 });
 
-gulp.task('jade-watch', ['jade'], function(){
+gulp.task('pug-watch', ['pug'], function(){
   browserSync.reload();
 });
 
@@ -47,9 +51,13 @@ gulp.task('sass', function() {
       })}))
       .pipe(sass({
           outputStyle: 'compressed'
+
       }).on('error', sass.logError))
       .pipe(rename({
         suffix: ".min",
+      }))
+      .pipe(autoprefixer({
+        browsers: ['last 2 versions', '> 5%', 'ie > 8'],
       }))
       .pipe(gulp.dest('dist/css/'))
       .pipe(browserSync.stream())
@@ -85,18 +93,33 @@ gulp.task('fonts', function(){
 
 gulp.task('images', function(){
   gulp.src('./src/img/**/*.{png,jpg,jpeg}')
+      .pipe(imagemin([
+        imagemin.gifsicle({interlaced: true}),
+        imagemin.jpegtran({progressive: true}),
+        imagemin.optipng({optimizationLevel: 5}),
+        imagemin.svgo({plugins: [{removeViewBox: true}]})
+      ]))
       .pipe(gulp.dest('./dist/img/'))
+      .pipe(browserSync.stream())
 });
 
-gulp.task('serve', ['jade', 'sass', 'scripts'], function() {
+gulp.task('todo', function () {
+    return gulp.src(['./src/js/**/*.js', './src/sass/**/*.sass', './src/pug/**/*.pug'])
+        .pipe(todo({
+          fileName: 'TODO.md'
+        }))
+        .pipe(gulp.dest('./'));
+});
+
+gulp.task('serve', ['pug', 'sass', 'scripts', 'images', 'todo'], function() {
 
     browserSync.init({
         server: "dist",
     });
 
-    gulp.watch("src/sass/**/*.sass", ['sass']);
-    gulp.watch("src/jade/**/*.jade", ['jade-watch']);
-    gulp.watch("src/js/**/*.js", ['scripts']);
+    gulp.watch("src/sass/**/*.sass", ['sass', 'todo']);
+    gulp.watch("src/jade/**/*.pug", ['pug-watch', 'todo']);
+    gulp.watch("src/js/**/*.js", ['scripts', 'todo']);
 
 });
 

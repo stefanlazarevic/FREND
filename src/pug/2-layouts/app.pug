@@ -1,0 +1,15 @@
+include ../0-includes/variables.pug
+include ../1-mixins/mixins.pug
+<!DOCTYPE html>
+html(lang="en")
+  head
+    include ../0-includes/meta.pug
+    include ../0-includes/socialMeta.pug
+    block title
+    include ../0-includes/links.pug
+  body
+    include ./_header.pug
+    include ./_navigation.pug
+    block content
+    include ./_footer.pug
+    include ../0-includes/scripts.pug
