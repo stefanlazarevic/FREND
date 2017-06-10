@@ -7,7 +7,7 @@
 
 ## About Template
 
-This Frontend template is a development template that will help you start building your website faster using Jade as HTML template engine, Sass with set of mixins for faster and less css writting and powerful ES6 syntax compiled to current ES2015 for browser compatibility.
+This Frontend template is a development template that will help you start building your website faster using Pug as HTML template engine, Sass with set of mixins for faster and less css writting and powerful ES6 syntax compiled to current ES2015 for browser compatibility.
 
 ## Quick start
 After you get template cd inside and run following command

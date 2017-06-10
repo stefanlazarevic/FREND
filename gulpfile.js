@@ -29,10 +29,7 @@ gulp.task('pug', function() {
   return gulp.src([
     'src/pug/4-pages/**/*.pug',
     'src/pug/index.pug'
-  ]).pipe(plumber({errorHandler: notify.onError({
-    message: "File: <%= error.details %> \nError: <%= error.message %>",
-    title: "Error found in Jade file. (See console for log.)"
-  })}))
+  ]).pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
     .pipe(pug({
       pretty: true
     }).on('error', console.error.bind(console)))
@@ -45,19 +42,15 @@ gulp.task('pug-watch', ['pug'], function(){
 
 gulp.task('sass', function() {
   return gulp.src('src/sass/app.sass')
-      .pipe(plumber({errorHandler: notify.onError({
-        message: "File: <%= error.details %> \nError: <%= error.message %>",
-        title: "Error found in Sass file. (See console for log.)"
-      })}))
+      .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
       .pipe(sass({
           outputStyle: 'compressed'
-
       }).on('error', sass.logError))
       .pipe(rename({
         suffix: ".min",
       }))
       .pipe(autoprefixer({
-        browsers: ['last 2 versions', '> 5%', 'ie > 8'],
+        browsers: ['> 1%', 'last 2 versions', 'IE 10', 'Firefox > 45', 'iOS 7'],
       }))
       .pipe(gulp.dest('dist/css/'))
       .pipe(browserSync.stream())
@@ -67,15 +60,8 @@ gulp.task('scripts', function(){
   return browserify({entries: './src/js/app.js', debug: true})
         .transform("babelify", { presets: ["es2015"] })
         .bundle()
-        .on("error", notify.onError(function (error) {
-          console.log('Error found in JS File');
-          console.error("Location: " + error.filename);
-          console.error("Line: " + error.loc.line);
-          console.error("\nError: " + error.codeFrame + '\n')
-          return {
-            title: "Error in JS file." + error.filename,
-            message: "Line: " + error.loc.line
-          }
+        .on('error',notify.onError(function (error) {
+          return "Message to the notifier: " + error.message;
         }))
         .pipe(source('app.min.js'))
         .pipe(buffer())
@@ -118,7 +104,7 @@ gulp.task('serve', ['pug', 'sass', 'scripts', 'images', 'todo'], function() {
     });
 
     gulp.watch("src/sass/**/*.sass", ['sass', 'todo']);
-    gulp.watch("src/jade/**/*.pug", ['pug-watch', 'todo']);
+    gulp.watch("src/pug/**/*.pug", ['pug-watch', 'todo']);
     gulp.watch("src/js/**/*.js", ['scripts', 'todo']);
 
 });
