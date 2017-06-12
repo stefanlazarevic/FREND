@@ -23,7 +23,50 @@
   </head>
   <body>
     <header role="banner"></header>
-    <main class="container" role="main"></main>
+    <main class="container" role="main">
+      <div class="col-6">
+        <form class="form">
+          <div class="form__group">
+            <label class="form__label">First name</label>
+            <input class="form__input" placeholder="Eg. Johan, Oggie, etc."/>
+          </div>
+          <div class="form__group-icon--left"><span class="icon icon-mail"></span>
+            <input class="form__input" placeholder="Email"/>
+          </div>
+          <div class="form__group-icon--left form--error">
+            <div class="icon icon-lock"></div>
+            <input class="form__input--password" type="password" placeholder="Password"/><span class="form__validation">Password field is required</span>
+          </div>
+          <div class="form__group-icon--right">
+            <div class="icon icon-search"></div>
+            <input class="form__input" placeholder="Type to search.."/>
+          </div>
+          <div class="form__group">
+            <textarea class="form__textarea"></textarea>
+          </div>
+          <div class="form__group form--error">
+            <input class="form__input"/><span class="form__validation">This field is required.</span>
+          </div>
+          <div class="form__group">
+            <select class="form__select">
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <input class="form__checkbox" type="checkbox" id="checkbox"/>
+            <label for="checkbox">Remember me</label>
+          </div>
+          <div class="form__group">
+            <input class="form__radio" type="radio" id="radio1" name="radio"/>
+            <label for="radio1">Item 1</label>
+            <input class="form__radio" type="radio" id="radio2" name="radio"/>
+            <label for="radio2">Item 2</label>
+          </div>
+        </form>
+      </div>
+    </main>
     <footer role="contentinfo">
       <address></address><small>
         <time datetime="2017"></time></small>
