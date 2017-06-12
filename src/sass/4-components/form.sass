@@ -1,0 +1,121 @@
+$element__margin--bottom: 15px
+
+.form
+  padding: 20px 15px
+
+.form__group
+  position: relative
+  display: block
+  width: 100%
+  &:not(:last-child)
+    margin-bottom: $element__margin--bottom
+
+.form__group-icon--left
+  @extend .form__group
+  height: 38px
+  input
+    +position(absolute, 0 0 0 0)
+    width: 100%
+    height: 100%
+    padding-left: 40px
+  .icon
+    display: inline
+    +position(absolute, 10px null null 15px)
+    z-index: $z--tooltip
+
+.form__group-icon--right
+  @extend .form__group-icon--left
+  input
+    padding:
+      left: 15px
+      right: 40px
+  .icon
+    +position(absolute, 10px 15px null auto)
+
+.form__label
+  display: block
+  margin-bottom: 7px
+
+.form__input
+  width: 100%
+  padding: 10px 15px
+  border: 1px solid $border--primary
+  &:not(:last-child)
+    margin-bottom: $element__margin--bottom
+
+.form__input--password
+  @extend .form__input
+  letter-spacing: 3px
+  &::placeholder
+    letter-spacing: normal
+
+.form__textarea
+  @extend .form__input
+  font-family: Arial
+  min-height: 100px
+
+.form__select
+  @extend .form__input
+  background: transparent
+
+.form__checkbox
+  display: none
+  & + label
+    display: inline-block
+    &:before
+      content: ""
+      display: inline-block
+      font:
+        family: FontAwesome
+        size: 13px
+      width: 20px
+      height: 20px
+      text:
+        align: center
+      vertical-align: middle
+      margin: -4px 10px 0 0
+      border: 1px solid $border--primary
+      background:
+        color: #ebebeb
+  &:checked + label:before
+    content: '\f00c'
+    font-size: 10px
+    line-height: 18px
+
+.form__radio
+  @extend .form__checkbox
+  & + label
+    margin: 0 10px 10px 0
+  & + label::before
+    width: 18px
+    height: 18px
+    border-radius: 40px
+  &:checked + label::before
+    content: ''
+    background-color: #171717
+    border: 5px solid #ededed
+    padding: 1px
+
+.form__validation
+  display: none
+
+.form--error
+  input,
+  select,
+  textarea
+    color: #222
+    margin-bottom: 5px !important
+    border: 1px solid $red
+  .form__validation
+    display: block
+    color: $red
+    font-size: 14px
+  .icon
+    color: $red !important
+
+.form__group-icon--left.form--error,
+.form__group-icon--right.form-error
+  margin-bottom: 35px
+  .form__validation
+    position: absolute
+    top: calc(100% + 5px)
