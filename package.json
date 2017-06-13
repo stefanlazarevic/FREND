@@ -3,6 +3,9 @@
   "version": "1.4.0",
   "description": "Basic markup for frontend projects.",
   "main": "index.js",
+  "bin": {
+    "ft": "ft.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
