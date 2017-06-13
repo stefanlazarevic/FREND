@@ -32,7 +32,7 @@ and that's all, you are ready to start with your new project!
 
 ## Documentation
 
-Comming soon.
+Read full template documentation [here.](https://github.com/stefanlazarevic/template/tree/master/_docs)
 
 ## Get in touch
 
