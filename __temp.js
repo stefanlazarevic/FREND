@@ -43,7 +43,7 @@ switch(numOfArguments){
     }
     else if(cm31 == '-h' || cm31 == '--help' || cm31 == '-help'){
       console.log('\n[Commands]\n');
-      console.log("-- ft make [page] [name]");
+      console.log(`${key('temp make page')} [name]`);
       console.log('\n-------------------------');
     }
     break;
