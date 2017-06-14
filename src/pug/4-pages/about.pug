@@ -6,36 +6,13 @@ block title
 
 block content
   main(role="main").container
-    .col-6
-      form.form
-        .form__group
-          label.form__label First name
-          input.form__input(placeholder="Eg. Johan, Oggie, etc.")
-        .form__group-icon--left
-          span.icon.icon-mail
-          input.form__input(placeholder="Email")
-        .form__group-icon--left.form--error
-          div.icon.icon-lock
-          input.form__input--password(type="password" placeholder="Password")
-          span.form__validation Password field is required
-        .form__group-icon--right
-          div.icon.icon-search
-          input.form__input(placeholder="Type to search..")
-        .form__group
-          textarea.form__textarea
-        .form__group.form--error
-          input.form__input
-          span.form__validation This field is required.
-        .form__group
-          select.form__select
-            option Option 1
-            option Option 2
-            option Option 3
-        .form__group
-          input(type="checkbox" id="checkbox").form__checkbox
-          label(for="checkbox") Remember me
-        .form__group
-          input(type="radio" id="radio1" name="radio").form__radio
-          label(for="radio1") Item 1
-          input(type="radio" id="radio2" name="radio").form__radio
-          label(for="radio2") Item 2
+    nav
+      ul.list--horizontal
+        li.list__item
+          a(href="#") Home
+        li.list__item
+          a(href="#") About
+        li.list__item
+          a(href="#") Gallery
+        li.list__item
+          a(href="#") Contact

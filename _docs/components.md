@@ -12,7 +12,7 @@ Template components:
 + avatar
 + button
 + [form](https://github.com/stefanlazarevic/template/tree/master/_docs/components_form.md)
-+ list
++ [list](https://github.com/stefanlazarevic/template/tree/master/_docs/components_list.md)
 + modal
 + table
 + [text](https://github.com/stefanlazarevic/template/tree/master/_docs/components_text.md)
