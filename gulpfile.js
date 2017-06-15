@@ -100,7 +100,13 @@ gulp.task('todo', function () {
 gulp.task('serve', ['pug', 'sass', 'scripts', 'images', 'todo'], function() {
 
     browserSync.init({
-        server: "dist",
+      server: {
+          baseDir: "./dist",
+          index: "index.html"
+      },
+      serveStaticOptions: {
+        extensions: ['html'] // pretty urls
+      }
     });
 
     gulp.watch("src/sass/**/*.sass", ['sass', 'todo']);

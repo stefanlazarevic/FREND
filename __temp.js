@@ -1,60 +1,48 @@
 #!/usr/bin/env node
 const fs = require('fs');
-var clc = require('cli-color');
+const arg = process.argv;
+const numOfArguments = arg.length;
+const { fileController } = require('./_temp/temp_file.js');
+const { pugFile } = require('./_temp/temp_content.js');
 
-const { showInfo } = require('./_temp/_temp.config.js');
-const { temp, key } = require('./_temp/temp-help.js');
-
-const numOfArguments = process.argv.length;
-
-var o = {
-  version: '1.0.0'
-}
-
-let writeFile = function(path, name, ext, content){
-  if(fs.existsSync(`.${path}/${name}.${ext}`)){
-    console.log(clc.red('Error: ') + 'File already exists.');
-    return;
-  }
-  fs.writeFile(`.${path}/${name}.${ext}`, `${content}`, function(err) {
-    if(err) {
-        return console.log(err);
-    }
-    console.log(temp + "File created.");
-})};
-
-const pugFile = `extends ../2-layouts/app.pug
-
-//- Change in variables.pug file
-block title
-  title #{indexTitle}
-
-block content
-  main(role="main").container`;
+const key_one = arg[2];
+const key_two = arg[3];
+const key_three = arg[4];
+const key_four = arg[5];
+const key_five = arg[6];
+const key_six = arg[7];
 
 switch(numOfArguments){
-  case 2:
-    console.log(`Use ${key('temp -h')} or ${key('temp -help')} or ${key('temp --help')} to see all available commands.`);
-    break;
-  case 3:
-    let cm31 = process.argv[2];
-    if(cm31 == '-v'){
-      console.log(`Front template: v${o.version}`);
-    }
-    else if(cm31 == '-h' || cm31 == '--help' || cm31 == '-help'){
-      console.log('\n[Commands]\n');
-      console.log(`${key('temp make page')} [name]`);
-      console.log('\n-------------------------');
-    }
-    break;
   case 5:
-    let cm51 = process.argv[2];
-    let cm52 = process.argv[3];
-    let cm53 = process.argv[4];
-    if(cm51 == 'make' && cm52 == 'page'){
-      writeFile('/src/pug/4-pages/', cm53, 'pug', pugFile);
+    if(key_one == 'make' && key_two == 'page'){
+      fileController.writeFile(fileController.pugPath, key_three, 'pug', pugFile);
     }
-    break;
-  default:
-    console.error('Command not found.')
+    else if(key_one == 'remove' && key_two == 'page'){
+      fileController.removeFile(fileController.pugPath, key_three, 'pug');
+      fileController.removeFile(fileController.htmlPath, key_three, 'html');
+    }
+    else if(key_one == 'set' && key_two == 'grid'){
+      if(Number.isInteger(parseInt(key_three)) && key_three > 0){
+        console.log(fileController.checkForFile(fileController.sassConfPath, '_conf', 'sass'));
+        fileController.editFile(fileController.sassConfPath, '_conf', 'sass', /\$grid-size: .*/g , `$grid-size: ${key_three}`);
+      }
+      else{
+        console.log("Parameter must be a number");
+      }
+    }
+  break;
+
+  case 7:
+    if(key_one == 'set' && key_two == 'grid' && key_four == '-p'){
+      if(Number.isInteger(parseInt(key_three)) && key_three > 0){
+        fileController.editFile(fileController.sassConfPath, '_conf', 'sass', /\$grid-size: .*/g , `$grid-size: ${key_three}`);
+        setTimeout(() => {
+          fileController.editFile(fileController.sassConfPath, '_conf', 'sass', /\$grid-column-side-padding: .*/g , `$grid-column-side-padding: ${key_five}`);
+        }, 400);
+      }
+      else{
+        console.log("Parameter must be a number");
+      }
+    }
+  break;
 }

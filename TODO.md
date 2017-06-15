@@ -3,3 +3,4 @@
 |:------|:------:|:------
 | 4-components/form.sass | 100 | Sass Form component .form__switch
 | 4-components/form.sass | 103 | Sass Form component .form__range
+| index.pug | 20 | Safe page delete using temp client.
