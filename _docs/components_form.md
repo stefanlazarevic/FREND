@@ -17,6 +17,8 @@
 
 .form__label
 
+.form__label--inline
+
 .form__input
 
 .form__input--password
@@ -25,9 +27,13 @@
 
 .form__select
 
+.form-select__arrow
+
 .form__checkbox
 
 .form__radio
+
+.form__switch
 ```
 
 ### Form - Building blocks
@@ -75,6 +81,13 @@
   label(for="radio1") Item 1
   input(type="radio" id="radio2" name="radio").form__radio
   label(for="radio2") Item 2
+
+/* Switch button */
+
+.form__group
+  input(type="checkbox" id="switch").form__switch
+  label(for="switch")
+
 ```
 
 > HTML syntax
@@ -126,5 +139,12 @@
   <label for="radio1">Item 1</label>
   <input class="form__radio" type="radio" id="radio2" name="radio"/>
   <label for="radio2">Item 2</label>
+</div>
+
+<!-- Switch button -->
+
+<div class="form__group">
+  <input class="form__switch" type="checkbox" id="switch"/>
+  <label for="switch"></label>
 </div>
 ```

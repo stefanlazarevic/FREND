@@ -112,6 +112,7 @@ gulp.task('serve', ['pug', 'sass', 'scripts', 'images', 'todo'], function() {
     gulp.watch("src/sass/**/*.sass", ['sass', 'todo']);
     gulp.watch("src/pug/**/*.pug", ['pug-watch', 'todo']);
     gulp.watch("src/js/**/*.js", ['scripts', 'todo']);
+    gulp.watch("src/img/**/*.{png,jpg,jpeg}", ['images', 'todo']);
 
 });
 

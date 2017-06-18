@@ -69,33 +69,28 @@
 
 // Responsive mixins
 =onTabletLand
-  @media #{$tablet-land}
+  @media #{$tablet--land}
     @content
 
 =onTabletPort
-  @media #{$tablet-port}
+  @media #{$tablet--port}
     @content
 
 =onMobileLand
-  @media #{$mobile-land}
+  @media #{$mobile--land}
     @content
 
 =onMobilePort
-  @media #{$mobile-port}
+  @media #{$mobile--port}
     @content
 
 =rotate($deg)
   transform: rotate($deg)
-  -webkit-transform: rotate($deg)
 
 =scale($points)
   transform: scale($points)
-  -webkit-transform: scale($points)
 
 =disable-select
-  -webkit-user-select: none
-  -moz-user-select: none
-  -ms-user-select: none
   user-select: none
 
 =absolute-center

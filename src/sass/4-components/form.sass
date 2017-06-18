@@ -50,6 +50,17 @@ $element__margin--bottom: 15px
   &::placeholder
     letter-spacing: normal
 
+.form__label--inline
+  @extend .form__label
+  display: inline-block
+  margin-right: 10px
+  vertical-align: top
+  margin-top: 10px
+  & + .form__input,
+  & + .form__input--password,
+    display: inline-block
+    width: auto
+
 .form__textarea
   @extend .form__input
   font-family: Arial
@@ -58,6 +69,21 @@ $element__margin--bottom: 15px
 .form__select
   @extend .form__input
   background: transparent
+  appearance: none
+  &::-ms-expand
+	  display: none
+  & + .form-select__arrow
+    +position(absolute, 16px 15px null null)
+    width: 0
+    height: 0
+    pointer-events: none
+    border:
+      width: 8px 5px 0 5px
+      style: solid
+      color: $border--primary transparent transparent transparent
+    transition: transform .3s ease-in
+  &:active + .form-select__arrow
+    transform: rotate(180deg)
 
 .form__checkbox
   display: none
@@ -97,8 +123,33 @@ $element__margin--bottom: 15px
     border: 5px solid #ededed
     padding: 1px
 
-// @TODO Sass Form component .form__switch
+// @TODO Sass Form component .form__file
+.form__file
+
 .form__switch
+  display: none
+  & + label
+    position: relative
+    display: inline-block
+    width: 60px
+    height: 30px
+    border-radius: 40px
+    background: $border--primary
+    &::before
+      content: ''
+      position: absolute
+      top: 3px
+      left: 5px
+      width: 24px
+      height: 24px
+      background: $white
+      border-radius: 30px
+      transition: .3s
+  &:checked + label
+    background: $green
+    &::before
+      left: calc(100% - 5px)
+      transform: translateX(-100%)
 
 // @TODO Sass Form component .form__range
 .form__range
@@ -126,3 +177,7 @@ $element__margin--bottom: 15px
   .form__validation
     position: absolute
     top: calc(100% + 5px)
+
+*:disabled,
+*.disabled
+  opacity: .5

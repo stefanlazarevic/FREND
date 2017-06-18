@@ -1,11 +1,22 @@
 //Must be inline. Bad sass syntax.
-$map: (desktop: (prefix: '-',breakpoint: 1200px,target: min), tablet-land: (prefix: -tl-,breakpoint: 1199px,target: max), tablet-port: (prefix: -tp-,breakpoint: 991px,target: max), mobile-land: (prefix: -ml-,breakpoint: 767px,target: max), mobile-port: (prefix: -mp-,breakpoint: 576px,target: max))
+// $d: (desktop: (prefix: '--', breakpoint: 1200px, target: min))
+$tl: (tablet-land: (prefix: tl, breakpoint: 1199px, target: max))
+$tp: (tablet-port: (prefix: tp, breakpoint: 991px, target: max))
+$ml: (mobile-land: (prefix: ml, breakpoint: 767px, target: max))
+$mp: (mobile-port: (prefix: mp, breakpoint: 576px, target: max))
 
-$mobile-port: "screen and (max-width: 575px)"
-$mobile-land: "screen and (max-width: 767px)"
-$tablet-port: "screen and (max-width: 991px)"
-$tablet-land: "screen and (max-width: 1199px)"
+$map: ($tl)
+// $map: map-merge($map, $tl)
+$map: map-merge($map, $tp)
+$map: map-merge($map, $ml)
+$map: map-merge($map, $mp)
+
+$mobile--port: "screen and (max-width: 575px)"
+$mobile--land: "screen and (max-width: 767px)"
+$tablet--port: "screen and (max-width: 991px)"
+$tablet--land: "screen and (max-width: 1199px)"
 $desktop: "screen and (min-width: 1200px)"
+$desktop--hd: "screen and (min-width: 1470px)"
 
 .container
   position: relative
@@ -15,21 +26,19 @@ $desktop: "screen and (min-width: 1200px)"
   padding:
     left: 15px
     right: 15px
+  width: 100%
 
-  @media #{$mobile-port}
-    width: 100%
-
-  @media #{$tablet-port}
-    width: 100%
+  @media #{$tablet--port}
     max-width: 750px
 
-  @media #{$tablet-land}
-    width: 100%
+  @media #{$tablet--land}
     max-width: 970px
 
   @media #{$desktop}
-    width: 100%
     max-width: 1170px
+
+  @media #{$desktop--hd}
+    max-width: 1440px
 
   &::before,
   &::after
@@ -66,15 +75,20 @@ $desktop: "screen and (min-width: 1200px)"
 
 
 @for $column from 1 through $grid-size
-  .col-#{$column}
+  .col--#{$column}
     @extend .col
     width: $column / $grid-size * 100%
+  .col-offset--#{$column}
+    margin-left: $column / $grid-size * 100%
 
 @each $device, $args in $map
   @for $column from 1 through $grid-size
-    .col#{map-get($args, prefix)}#{$column}
+    .col__#{map-get($args, prefix)}--#{$column}
       @extend .col
   @media screen and (#{map-get($args, target)}-width: #{map-get($args, breakpoint)})
     @for $column from 1 through $grid-size
-      .col#{map-get($args, prefix)}#{$column}
+      .col__#{map-get($args, prefix)}--#{$column}
         width: $column / $grid-size * 100%
+    @for $column from 1 through ($grid-size - 1)
+      .col__#{map-get($args, prefix)}-offset--#{$column}
+        margin-left: $column / $grid-size * 100%

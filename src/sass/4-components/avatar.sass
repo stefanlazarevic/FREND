@@ -1,0 +1,79 @@
+.avatar
+  position: relative
+  width: 120px
+  height: 120px
+  margin-bottom: 10px
+  img
+    width: 100%
+    height: 100%
+
+.avatar--small
+  @extend .avatar
+  width: 90px
+  height: 90px
+
+.avatar--large
+  @extend .avatar
+  width: 152px
+  height: 152px
+
+.avatar--round
+  overflow: hidden
+  border-radius: 50%
+  @extend .avatar
+
+.avatar-small--round
+  @extend .avatar--round
+  @extend .avatar--small
+
+.avatar-large--round
+  @extend .avatar--round
+  @extend .avatar--large
+
+// Avatar with upload.
+
+.avatar__upload
+  display: none
+
+.avatar__label[for="avatar"]
+  +position(absolute, 0 0 null null)
+  width: 100%
+  height: 100%
+  color: $white
+  text-align: center
+  transition: background .2s ease-in-out
+
+.avatar__text
+  display: none
+  +position(absolute, 50% 0 null null)
+  width: 100%
+  transform: translateY(-50%)
+  &:before
+    font:
+      family: FontAwesome
+      size: 26px
+    display: block
+    content: '\f093'
+    margin-bottom: 5px
+
+.avatar__label[for="avatar"]:hover
+  background: rgba(0, 0, 0, .5)
+  .avatar__text
+    display: block
+
+.avatar,
+.avatar--round
+  .avatar__text
+    font-size: 14px
+
+.avatar--small,
+.avatar-small--round
+  .avatar__text
+    font-size: 12px
+
+.avatar--large,
+.avatar-large--round
+  .avatar__text
+    font-size: 18px
+    &::before
+      font-size: 34px

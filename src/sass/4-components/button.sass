@@ -1,0 +1,49 @@
+.btn
+  display: inline-block
+  position: relative
+  letter-spacing: .5px
+  border: 1px solid transparent
+  border-radius: 2px
+  height: 36px
+  line-height: 36px
+  text-transform: uppercase
+  padding: 0 2rem
+  user-select: none
+  vertical-align: middle
+  font:
+    family: Helvetica, Arial, sans-serif
+    size: 14px
+  color: #222
+  background: $border--primary
+  &:hover
+    background: #aaa
+
+.btn--ghost
+  @extend .btn
+  background: transparent
+  color: #444
+  border-color: currentColor
+
+.btn-icon--left
+  @extend .btn
+  padding-left: 50px
+  .btn__icon
+    +position(absolute, -1px null null 25px)
+
+.btn-icon--right
+  @extend .btn
+  padding-right: 50px
+  .btn__icon
+    +position(absolute, -1px 25px null null)
+
+.btn__icon
+  @extend .icon
+
+.btn--right
+  float: right
+
+.btn--center
+  display: block
+  margin:
+    right: auto
+    left: auto
