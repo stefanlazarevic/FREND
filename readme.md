@@ -11,8 +11,8 @@ This Frontend template is a development template that will help you start buildi
 
 ## Requirements
 
-[node.js](https://nodejs.org/en/) >= 6.10.0
-[npm](https://www.npmjs.com/) >= 3.10.0
++ [node.js](https://nodejs.org/en/) >= 6.10.0
++ [npm](https://www.npmjs.com/) >= 3.10.0
 
 ## Quick start
 

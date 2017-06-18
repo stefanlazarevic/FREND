@@ -1,0 +1,25 @@
+.accordion
+  width: 100%
+  border: 0
+  outline: 0
+  font:
+    size: 14px
+  background: none
+  position: relative
+
+.accordion__header
+  display: block
+  padding: 10px 5px
+  cursor: pointer
+  &:hover
+    background: #eee
+  margin-bottom: 10px
+
+.accordion__content
+  max-height: 0
+  overflow: hidden
+  transition: max-height .2s ease-out
+
+.accordion__item
+  display: block
+  margin: 5px 0

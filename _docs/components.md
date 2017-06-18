@@ -8,7 +8,7 @@ All classes used in sass file follows BEM convection. If you are unfamiliar with
 
 Template components:
 
-+ accordion
++ [accordion](https://github.com/stefanlazarevic/template/tree/master/_docs/components_accordion.md)
 + [avatar](https://github.com/stefanlazarevic/template/tree/master/_docs/components_avatar.md)
 + [button](https://github.com/stefanlazarevic/template/tree/master/_docs/components_button.md)
 + [form](https://github.com/stefanlazarevic/template/tree/master/_docs/components_form.md)
