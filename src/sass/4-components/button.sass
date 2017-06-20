@@ -1,3 +1,9 @@
+$button--green: (button--green: (name: 'green', bg__normal: '#5cb85c', text__normal: '#fff', bg__hover: '#449d44', text__hover: '#fff'))
+$button--red: (button--red: (name: 'red', bg__normal: '#d9534f', text__normal: '#fff', bg__hover: '#c9302c', text__hover: '#fff'))
+
+$map: ($button--green)
+$map: map-merge($map, $button--red)
+
 .btn
   display: inline-block
   position: relative
@@ -47,3 +53,11 @@
   margin:
     right: auto
     left: auto
+
+@each $button, $args in $map
+  .btn--#{map-get($args, name)}
+    background: #{map-get($args, bg__normal)}
+    color: #{map-get($args, text__normal)}
+    &:hover
+      background: #{map-get($args, bg__hover)}
+      color: #{map-get($args, text__hover)}

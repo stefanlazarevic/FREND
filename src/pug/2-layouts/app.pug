@@ -1,5 +1,6 @@
 include ../0-includes/variables.pug
 include ../1-mixins/_mixins.pug
+include ../3-modules/_modules.pug
 <!DOCTYPE html>
 html(lang="en")
   head
@@ -12,5 +13,7 @@ html(lang="en")
     include ./_navigation.pug
     block content
     include ./_footer.pug
+    block scriptBefore
     include ../0-includes/scripts.pug
+    block scriptAfter
     noscript  Oh no, you either have JavaScript turned off or your browser doesn't support JavaScript.

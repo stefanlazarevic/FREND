@@ -5,6 +5,10 @@ block title
   title #{indexTitle}
 
 block content
-  main(role="main").container`;
+  main(role="main").container
+
+block scriptBefore
+
+block scriptAfter`;
 
 module.exports.pugFile = pugFile;

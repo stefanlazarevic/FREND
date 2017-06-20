@@ -1,7 +1,11 @@
+$avatar--small: 90px
+$avatar--normal: 120px
+$avatar--large: 152px
+
 .avatar
   position: relative
-  width: 120px
-  height: 120px
+  width: $avatar--normal
+  height: $avatar--normal
   margin-bottom: 10px
   img
     width: 100%
@@ -9,13 +13,13 @@
 
 .avatar--small
   @extend .avatar
-  width: 90px
-  height: 90px
+  width: $avatar--small
+  height: $avatar--small
 
 .avatar--large
   @extend .avatar
-  width: 152px
-  height: 152px
+  width: $avatar--large
+  height: $avatar--large
 
 .avatar--round
   overflow: hidden

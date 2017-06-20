@@ -11,9 +11,13 @@ Template components:
 + [accordion](https://github.com/stefanlazarevic/template/tree/master/_docs/components_accordion.md)
 + [avatar](https://github.com/stefanlazarevic/template/tree/master/_docs/components_avatar.md)
 + [button](https://github.com/stefanlazarevic/template/tree/master/_docs/components_button.md)
++ code
++ dropdown
 + [form](https://github.com/stefanlazarevic/template/tree/master/_docs/components_form.md)
 + [list](https://github.com/stefanlazarevic/template/tree/master/_docs/components_list.md)
 + modal
++ [map](https://github.com/stefanlazarevic/template/tree/master/_docs/components_map.md)
++ pagination
 + table
 + [text](https://github.com/stefanlazarevic/template/tree/master/_docs/components_text.md)
 + tooltip

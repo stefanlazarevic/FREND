@@ -1,12 +1,9 @@
-//Must be inline. Bad sass syntax.
-// $d: (desktop: (prefix: '--', breakpoint: 1200px, target: min))
 $tl: (tablet-land: (prefix: tl, breakpoint: 1199px, target: max))
 $tp: (tablet-port: (prefix: tp, breakpoint: 991px, target: max))
 $ml: (mobile-land: (prefix: ml, breakpoint: 767px, target: max))
 $mp: (mobile-port: (prefix: mp, breakpoint: 576px, target: max))
 
 $map: ($tl)
-// $map: map-merge($map, $tl)
 $map: map-merge($map, $tp)
 $map: map-merge($map, $ml)
 $map: map-merge($map, $mp)

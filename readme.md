@@ -1,4 +1,4 @@
-# Frontend Startup template
+# FREND - Frontend Startup template
 
 <p align="center">
 <img src="https://camo.githubusercontent.com/249b22073885159d7356c0ad711c0cab12b8aab6/68747470733a2f2f7472617669732d63692e6f72672f706f73746373732f6175746f70726566697865722e737667" alt="Passing">
@@ -43,7 +43,7 @@ On your first build application will be open on port 3000 or first available por
 gulp
 ```
 
-* Template comes with build in CLI that you can call by typing ``temp`` in your console.
+* Template comes with build in CLI that you can call by typing ``temp`` (_will be changed to frend_) in your console.
 
 ```
 temp
@@ -57,6 +57,25 @@ temp -h or temp -help or temp --help
 ```
 
 ------
+
+## Community plugins
+
+Frontend template integrates axios as HTTP client for the browser and node.js
+@Licence MIT axios v0.16.2 | (c) 2017 by [Matt Zabriskie](http://twitter.com/mzabriskie)
+
+Read full documentation for axios [here](https://github.com/mzabriskie/axios).
+
+Inside template you can use **axios** with keyword ``ajax``
+
+__Example:__
+```javascript
+ajax.get('route').then((response) => {
+
+}).catch((ex) = > {
+  err(ex);
+});
+```
+
 
 ## Documentation
 
