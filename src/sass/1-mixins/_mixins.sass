@@ -104,3 +104,11 @@
     font-size: $size
   @if $weight
     font-weight: $weight
+
+=clearfix
+  &::before,
+  &:after
+    display: table
+    content: " "
+  &:after
+    clear: both

@@ -1,0 +1,39 @@
+.divider
+  font-size: 1.1rem
+  margin: 1.1rem 0
+  border-top: 1px solid rgba(34,36,38,.15)
+  border-bottom: 1px solid rgba(255,255,255,.1)
+  user-select: none
+  line-height: 1
+  height: 0
+  letter-spacing: .05em
+  color: rgba(0, 0, 0, .85)
+
+.divider--invisible
+  @extend .divider
+  border-color: transparent
+
+.divider--large
+  @extend .divider
+  margin: 3.2rem 0
+  font-size: 3.2rem
+
+.divider-large--invisible
+  @extend .divider--large
+  @extend .divider--invisible
+
+.divider--text
+  position: relative
+
+.divider--text > *:not(.divider):not(.divider--large)
+    display: inline
+    position: absolute
+    z-index: 4
+    top: 0
+    left: 50%
+    background: #fff
+    padding: 0 10px
+    transform: translate(-50%, -50%)
+
+.divider--vertical
+// @TODO vertical dividers.

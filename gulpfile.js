@@ -102,10 +102,12 @@ gulp.task('serve', ['pug', 'sass', 'scripts', 'images', 'todo'], function() {
     browserSync.init({
       server: {
           baseDir: "./dist",
-          index: "index.html"
-      },
-      serveStaticOptions: {
-        extensions: ['html'] // pretty urls
+          middleware: [
+            function(req, res, next){
+              res.setHeader('Access-Control-Allow-Origin', '*');
+              next();
+            }
+          ]
       }
     });
 

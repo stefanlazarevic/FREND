@@ -24,7 +24,7 @@ switch(numOfArguments){
     else if(key_one == 'set' && key_two == 'grid'){
       if(Number.isInteger(parseInt(key_three)) && key_three > 0){
         console.log(fileController.checkForFile(fileController.sassConfPath, '_conf', 'sass'));
-        fileController.editFile(fileController.sassConfPath, '_conf', 'sass', /\$grid-size: .*/g , `$grid-size: ${key_three}`);
+        fileController.editFile(fileController.sassConfPath, '_conf', 'sass', /\$grid-size: .*/g , `$grid-size: ${key_three}px`);
       }
       else{
         console.log("Parameter must be a number");

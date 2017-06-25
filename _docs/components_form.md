@@ -36,6 +36,12 @@
 .form__switch
 ```
 
+Form component comes with submit loader that you can include using data attribute ``data-loader="overlay"``
+
+```pug
+.form(data-loader="overlay")
+```
+
 ### Form - Building blocks
 
 > Pug syntax
@@ -67,6 +73,7 @@
     option Option 1
     option Option 2
     option Option 3
+  .form-select__arrow
 
 /* Checkbox. */
 
@@ -123,6 +130,7 @@
     <option>Option 2</option>
     <option>Option 3</option>
   </select>
+  <div class="form-select__arrow"></div>
 </div>
 
 <!--  Checkbox -->

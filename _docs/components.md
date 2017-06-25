@@ -12,6 +12,7 @@ Template components:
 + [avatar](https://github.com/stefanlazarevic/template/tree/master/_docs/components_avatar.md)
 + [button](https://github.com/stefanlazarevic/template/tree/master/_docs/components_button.md)
 + code
++ divider(https://github.com/stefanlazarevic/template/tree/master/_docs/components_divider.md)
 + dropdown
 + [form](https://github.com/stefanlazarevic/template/tree/master/_docs/components_form.md)
 + [list](https://github.com/stefanlazarevic/template/tree/master/_docs/components_list.md)

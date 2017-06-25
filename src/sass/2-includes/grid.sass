@@ -53,9 +53,9 @@ $desktop--hd: "screen and (min-width: 1470px)"
 
 .row
   position: relative
-  &:before,
-  &:after
-    @extend .clearfix
+  padding: 10px 0
+  vertical-align: baseline
+  +clearfix
 
 .col
   position: relative
@@ -66,10 +66,7 @@ $desktop--hd: "screen and (min-width: 1470px)"
     right: $grid-column-side-padding
 
 .clearfix
-  display: table
-  content: " "
-  clear: both
-
+  +clearfix
 
 @for $column from 1 through $grid-size
   .col--#{$column}

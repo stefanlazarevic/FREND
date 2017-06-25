@@ -13,15 +13,18 @@ $element__margin--bottom: 15px
 .form__group-icon--left
   @extend .form__group
   height: 38px
+  .icon
+    display: inline
+    +position(absolute, 10px null null 15px)
+    z-index: $z--tooltip
+    opacity: .5
   input
     +position(absolute, 0 0 0 0)
     width: 100%
     height: 100%
     padding-left: 40px
-  .icon
-    display: inline
-    +position(absolute, 10px null null 15px)
-    z-index: $z--tooltip
+    &:focus + .icon
+      opacity: 1
 
 .form__group-icon--right
   @extend .form__group-icon--left
@@ -41,8 +44,12 @@ $element__margin--bottom: 15px
   width: 100%
   padding: 10px 15px
   border: 1px solid $border--primary
+  outline: 0
+  background: $white
   &:not(:last-child)
     margin-bottom: $element__margin--bottom
+  &:focus
+    border-color: #222
 
 .form__input--password
   @extend .form__input
@@ -68,7 +75,8 @@ $element__margin--bottom: 15px
 
 .form__select
   @extend .form__input
-  background: transparent
+  // background: transparent
+  background: $white
   appearance: none
   &::-ms-expand
 	  display: none
@@ -81,9 +89,11 @@ $element__margin--bottom: 15px
       width: 8px 5px 0 5px
       style: solid
       color: $border--primary transparent transparent transparent
-    transition: transform .3s ease-in
+    transition: all .3s ease-in
+    z-index: $z--tooltip
   &:active + .form-select__arrow
     transform: rotate(180deg)
+    border-top-color: #222
 
 .form__checkbox
   display: none

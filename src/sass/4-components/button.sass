@@ -1,8 +1,23 @@
-$button--green: (button--green: (name: 'green', bg__normal: '#5cb85c', text__normal: '#fff', bg__hover: '#449d44', text__hover: '#fff'))
-$button--red: (button--red: (name: 'red', bg__normal: '#d9534f', text__normal: '#fff', bg__hover: '#c9302c', text__hover: '#fff'))
+$button--facebook: (button--facebook: (name: 'facebook', bg__normal: '#3b5998', text__normal: '#fff', bg__hover: '#2d4373', text__hover: '#fff'))
+$button--twitter: (button--twitter: (name: 'twitter', bg__normal: '#55acee', text__normal: '#fff', bg__hover: '#2795e9', text__hover: '#fff'))
+$button--google: (button--google: (name: 'google', bg__normal: '#dd4b39', text__normal: '#fff', bg__hover: '#c23321', text__hover: '#fff'))
+$button--linkedin: (button--linkedin: (name: 'linkedin', bg__normal: '#007bb6', text__normal: '#fff', bg__hover: '#005983', text__hover: '#fff'))
+$button--github: (button--github: (name: 'github', bg__normal: '#444', text__normal: '#fff', bg__hover: '#2b2b2b', text__hover: '#fff'))
+$button--pinterest: (button--pinterest: (name: 'pinterest', bg__normal: '#cb2027', text__normal: '#fff', bg__hover: '#9f191f', text__hover: '#fff'))
+$button--yahoo: (button--yahoo: (name: 'yahoo', bg__normal: '#720e9e', text__normal: '#fff', bg__hover: '#500a6f', text__hover: '#fff'))
+$button--instagram: (button--instagram: (name: 'instagram', bg__normal: '#3f729b', text__normal: '#fff', bg__hover: '#305777', text__hover: '#fff'))
+$button--tumblr: (button--tumblr: (name: 'tumblr', bg__normal: '#2c4762', text__normal: '#fff', bg__hover: '#1c2d3f', text__hover: '#fff'))
 
-$map: ($button--green)
-$map: map-merge($map, $button--red)
+$map: ($button--facebook)
+$map: map-merge($map, $button--twitter)
+$map: map-merge($map, $button--google)
+$map: map-merge($map, $button--linkedin)
+$map: map-merge($map, $button--github)
+$map: map-merge($map, $button--pinterest)
+$map: map-merge($map, $button--yahoo)
+$map: map-merge($map, $button--instagram)
+$map: map-merge($map, $button--tumblr)
+
 
 .btn
   display: inline-block
@@ -16,6 +31,7 @@ $map: map-merge($map, $button--red)
   padding: 0 2rem
   user-select: none
   vertical-align: middle
+  cursor: pointer
   font:
     family: Helvetica, Arial, sans-serif
     size: 14px
@@ -29,18 +45,68 @@ $map: map-merge($map, $button--red)
   background: transparent
   color: #444
   border-color: currentColor
+  transition: all .3s ease-in-out
+
+.btn--icon,
+.btn--options,
+.btn__option
+    display: inline-block
+    width: 40px
+    height: 40px
+    text-align: center
+    border: 0
+    outline: 0
+    vertical-align: middle
+    line-height: 40px
+    font-size: .9em
+    padding: 1px 6px
+
+    &::before
+      font-family: FontAwesome
+
+.btn--options
+  position: relative
+  background: $border--primary
+  color: #222
+  cursor: pointer
+  .options
+    display: none
+    +position(absolute, 0 null null 100%)
+    background: #eee
+    width: attr(data-options)px
+    height: 100%
+    overflow: hidden
+    .btn__option
+      width: 40px
+      color: #222
+      margin:
+        top: -3px
+      &:hover
+        background: #ccc
+
+a.btn--icon:not(:first-child):not(:last-child)
+  margin:
+    left: 4px
+    right: 4px
+
+.btn__icon
+  display: inline-block
+  width: 2.75em
+  height: 100%
+  text-align: center
+  background: rgba(0, 0, 0, .1)
 
 .btn-icon--left
   @extend .btn
-  padding-left: 50px
+  padding-left: 4rem
   .btn__icon
-    +position(absolute, -1px null null 25px)
+    +position(absolute, 0 null null 0)
 
 .btn-icon--right
   @extend .btn
-  padding-right: 50px
+  padding-right: 4rem
   .btn__icon
-    +position(absolute, -1px 25px null null)
+    +position(absolute, 0 0 null null)
 
 .btn__icon
   @extend .icon
@@ -56,8 +122,8 @@ $map: map-merge($map, $button--red)
 
 @each $button, $args in $map
   .btn--#{map-get($args, name)}
-    background: #{map-get($args, bg__normal)}
-    color: #{map-get($args, text__normal)}
+    background: #{map-get($args, bg__normal)} !important
+    color: #{map-get($args, text__normal)} !important
     &:hover
-      background: #{map-get($args, bg__hover)}
-      color: #{map-get($args, text__hover)}
+      background: #{map-get($args, bg__hover)} !important
+      color: #{map-get($args, text__hover)} !important

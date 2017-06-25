@@ -1,0 +1,283 @@
+extends ../2-layouts/app.pug
+
+//- Change in variables.pug file
+block title
+  title #{indexTitle}
+
+block content
+  main(role="main").container
+    .col--12
+      h1  Components
+      .row
+        h2 Buttons
+        .divider
+        .row
+          button.btn Button normal
+        .row
+          a(href="#").btn Anchor button normal
+        .row
+          button.btn--ghost Ghost button
+        .row
+          button.btn.btn--center Centered button
+        .row
+          button.btn.btn--right Right align button
+        .row
+          a(href="#").btn-icon--left Google button
+            .btn__icon.icon--google 
+        .row
+          a(href="#").btn-icon--right Facebook button
+            .btn__icon.icon--facebook
+        .row
+          a(href="#").btn-icon--right.btn--github Github button
+            .btn__icon.icon--github
+        .row
+          a(href="#").btn--icon.btn--facebook.icon--facebook
+          a(href="#").btn--icon.btn--tumblr.icon--tumblr
+          a(href="#").btn--icon.btn--pinterest.icon--pinterest
+        .row
+          .row
+            .col--12
+              .btn--options.icon--share.btn--center
+                .options(data-options="2" data-position="right")
+                  a(href="#").btn__option.btn--facebook.icon--facebook
+                  a(href="#").btn__option.btn--twitter.icon--twitter
+          .row
+            .col--12
+              .btn--options.icon--options.btn--center
+                .options(data-options="3" data-position="left")
+                  a(href="#").btn__option.icon--preview
+                  a(href="#").btn__option.icon--edit
+                  a(href="#").btn__option.icon--delete
+      .row
+        h2  Accordion
+        .divider
+        .row
+          h6 Single accordion
+          .divider
+          .accordion(data-accordion="single")
+            .accordion__header Click me
+              .accordion__content
+                p Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+                  | piece of classical Latin literature from 45 BC, making it over 2000 years old.
+            .accordion__header Click me 2
+              .accordion__content
+                p Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+                  | piece of classical Latin literature from 45 BC, making it over 2000 years old.
+        .divider--invisible
+        .row
+          h6 Multiple accordion
+          .divider
+          .accordion(data-accordion="multiple")
+            .accordion__header Click me
+              .accordion__content
+                p Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+                  | piece of classical Latin literature from 45 BC, making it over 2000 years old.
+            .accordion__header Click me 2
+              .accordion__content
+                p Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+                  | piece of classical Latin literature from 45 BC, making it over 2000 years old.
+      .row
+        h2 Lists
+        .divider
+        .row
+          .col--4.col
+            h6 Normal list
+            .divider
+            ul.list
+              li.list__item List item
+              li.list__item List item
+              li.list__item List item
+              li.list__item List item
+          .col--4
+            h6 List with header
+            .divider
+            ul.list
+              li.list__header Join our community
+              li.list__item Comunity
+              li.list__item Blog
+              li.list__item Forum
+              li.list__item Meetups
+          .col--4
+            h6 Horizontal list
+            .divider
+            ul.list--horizontal
+              li.list__item Home
+              li.list__item About
+              li.list__item Portfolio
+              li.list__item Contact
+      .row
+        h2  Avatar
+        .divider
+        .row
+          .col--4
+            h6 Small size image
+            .avatar--small
+              img(src="img/avatar/avatar.jpg" alt="Stefan Lazarevic")
+          .col--4
+            h6 Normal size image
+            .avatar
+              img(src="img/avatar/avatar.jpg" alt="Stefan Lazarevic")
+          .col--4
+            h6 Large size image
+            .avatar--large
+              img(src="img/avatar/avatar.jpg" alt="Stefan Lazarevic")
+        .row
+          .divider
+          .col--4
+            h6 Small size image round
+            .avatar-small--round
+              img(src="img/avatar/avatar.jpg" alt="Stefan Lazarevic")
+          .col--4
+            h6 Normal size image round
+            .avatar--round
+              img(src="img/avatar/avatar.jpg" alt="Stefan Lazarevic")
+          .col--4
+            h6 Large size image round
+            .avatar-large--round
+              img(src="img/avatar/avatar.jpg" alt="Stefan Lazarevic")
+        .row
+          .divider
+          .col--6
+            h6 Image uploader
+            .avatar--large(data-avatar-upload="true")
+              img(src="img/avatar/avatar.jpg" alt="Stefan Lazarevic")
+      .row
+        h2 Form element
+        .divider
+        .row
+          .form__group
+            label(for="normal").form__label Normal input
+            input(type="text" id="normal" name="normal").form__input 
+          .form__group
+            label(for="password").form__label Password input
+            input(type="password" placeholder="Password" id="password" name="password").form__input--password
+          .form__group-icon--left
+            input(type="email" placeholder="Email with icon" id="input__left" name="input__left").form__input
+            .icon.icon--mail
+          .form__group-icon--right
+            input(type="email" placeholder="Email with icon" id="input__right" name="input__right").form__input
+            .icon.icon--mail
+          .form__group.form--error
+            input.form__input--password(type="text" placeholder="Validation input")
+            span.form__validation This is form input with validation triggered.
+          .form__group
+            select(id="select").form__select
+              option Option 1
+              option Option 2
+              option Option 3
+            .form-select__arrow
+          .form__group
+            input(type="checkbox" id="checkbox").form__checkbox
+            label(for="checkbox") Remember me
+          form.form
+            .form__group
+              input(type="radio" id="radio1" name="radio").form__radio
+              label(for="radio1") Item 1
+              input(type="radio" id="radio2" name="radio").form__radio
+              label(for="radio2") Item 2
+            .form__group
+              input(type="checkbox" id="switch").form__switch
+              label(for="switch")
+      .row
+        h2 Typography
+        .divider
+        .row
+          h1 Header 1
+          h2 Header 2
+          h3 Header 3
+          h4 Header 4
+          h5 Header 5
+          h6 Header 6
+          p.
+            <span class="text--bold">Lorem ipsum dolor sit amet</span>, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <span class="text--italic">Ut enim ad minim veniam</span>, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      .row
+        h2 Code presentation editor
+        .divider
+        .row
+          .editor__container
+            table(class="editor" border="0" cellpadding="0" cellspacing="0")
+              tbody
+                tr
+                  td.code__line # Your code line.
+                //- Indented line for 1 tab.
+                tr
+                  td(data-indent="1").code__line # Your indented code line.
+                tr
+                  td.code__line
+                    span.key var 
+                    | name = 
+                    span.str "Stefan"
+                    | ;
+                tr
+                  td.code__line.
+                    <span class="key">console</span>.<span class="fun">log</span>(<span class="str">"Hello"</span> + <span class="key">name</span>);
+      .row
+        h2 Dividers
+        .divider
+        .row
+          .col--6
+            h6 Normal divider
+          .col--6
+            p
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              .divider
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        .row
+          .col--6
+            h6 Invisible divider
+          .col--6
+            p
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              .divider--invisible
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        .row
+          .col--6
+            h6 Large divider
+          .col--6
+            p
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              .divider--large
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        .row
+          .col--6
+            h6 Large invisible divider
+          .col--6
+            p
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              .divider-large--invisible
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        .row
+          .col--6
+            h6 Divider with text
+          .col--6
+            p
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              .divider--text
+                .divider
+                span I can divide two paragraphs
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      .row
+        .col--6
+          h6 Large divider with text
+        .col--6
+          p
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            .divider--text
+              .divider--large
+              span I can divide two paragraphs
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      .row
+        h2 Converter
+        .row(data-convertor="true")
+          .col--6
+            .form__group
+              label(for="din").form__label Dinara
+              input(type="number" id="din").form__input
+          .col--6
+            .form__group
+              label(for="dol").form__label Dolara
+              input(type="number" id="dol").form__input
+      .row
+block scriptBefore
+
+block scriptAfter

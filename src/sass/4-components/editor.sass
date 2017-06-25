@@ -1,0 +1,71 @@
+$editor__background: #1b2426
+$editor__plain: #afafaf
+$code__line-height: 17px
+
+$editor__keyword: $red
+$editor__variable: #0057E7
+$editor__string: $green
+$editor__function: $yellow
+$editor__comment: #888
+
+.editor__container
+  width: 100%
+  overflow: auto
+  white-space: nowrap
+  background: $editor__background
+  padding-left: 45px
+  border-radius: 3px
+  margin: 10px 0
+
+.code__line-number,
+.code__line
+  margin: 0
+  border-top-width: 0
+  white-space: nowrap
+  padding: 5px 0
+  height: $code__line-height * 2 - 2
+
+.editor
+  border-spacing: 0
+  color: $editor__plain
+  font-family: monospace
+  line-height: $code__line-height
+  tr:first-child
+    .code__line-number,
+    .code__line
+      padding-top: 8px
+  tr:last-child
+    .code__line-number,
+    .code__line
+      padding-bottom: 8px
+
+.code__line
+  padding-right: 20px
+  *
+    display: inline
+
+.code__line-number
+  position: absolute
+  left: 0
+  width: 35px
+  text-align: center
+  top: auto
+  border-right: 3px solid $editor__plain
+  background: $editor__background
+  user-select: none
+  font-weight: 100
+
+.key
+  color: $editor__keyword
+
+.str
+  color: $editor__string
+
+.comm
+  color: $editor__comment
+
+.fun
+  color: $editor__function
+
+.var
+  color: $editor__variable

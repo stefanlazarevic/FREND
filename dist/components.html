@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" shrink-to-fit="no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="author" content="Stefan Lazarevic"/>
+    <meta name="description" content=""/>
+    <meta name="Copyright" content="Stefan Lazarevic 2017"/>
+    <meta name="twitter:card" content=""/>
+    <meta name="twitter:site" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:url" content=""/>
+    <meta property="og:title" content=""/>
+    <meta property="og:description" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:image" content=""/>
+    <title>Frontend Template</title>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="apple-touch-icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="./css/app.min.css"/>
+    <noscript>
+      <link rel="stylesheet" href="css/no-js.css"/>
+    </noscript>
+  </head>
+  <body>
+    <header role="banner"></header>
+    <main class="container" role="main">
+      <div class="col--12">
+        <h1> Components</h1>
+        <div class="row">
+          <h2>Buttons</h2>
+          <div class="divider"></div>
+          <div class="row">
+            <button class="btn">Button normal</button>
+          </div>
+          <div class="row"><a class="btn" href="#">Anchor button normal</a></div>
+          <div class="row">
+            <button class="btn--ghost">Ghost button</button>
+          </div>
+          <div class="row">
+            <button class="btn btn--center">Centered button</button>
+          </div>
+          <div class="row">
+            <button class="btn btn--right">Right align button</button>
+          </div>
+          <div class="row"><a class="btn-icon--left" href="#">Google button
+              <div class="btn__icon icon--google"> </div></a></div>
+          <div class="row"><a class="btn-icon--right" href="#">Facebook button
+              <div class="btn__icon icon--facebook"></div></a></div>
+          <div class="row"><a class="btn-icon--right btn--github" href="#">Github button
+              <div class="btn__icon icon--github"></div></a></div>
+          <div class="row"><a class="btn--icon btn--facebook icon--facebook" href="#"></a><a class="btn--icon btn--tumblr icon--tumblr" href="#"></a><a class="btn--icon btn--pinterest icon--pinterest" href="#"></a></div>
+          <div class="row">
+            <div class="row">
+              <div class="col--12">
+                <div class="btn--options icon--share btn--center">
+                  <div class="options" data-options="2" data-position="right"><a class="btn__option btn--facebook icon--facebook" href="#"></a><a class="btn__option btn--twitter icon--twitter" href="#"></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col--12">
+                <div class="btn--options icon--options btn--center">
+                  <div class="options" data-options="3" data-position="left"><a class="btn__option icon--preview" href="#"></a><a class="btn__option icon--edit" href="#"></a><a class="btn__option icon--delete" href="#"></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <h2> Accordion</h2>
+          <div class="divider"></div>
+          <div class="row">
+            <h6>Single accordion</h6>
+            <div class="divider"></div>
+            <div class="accordion" data-accordion="single">
+              <div class="accordion__header">Click me
+                <div class="accordion__content">
+                  <p>
+                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in apiece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                </div>
+              </div>
+              <div class="accordion__header">Click me 2
+                <div class="accordion__content">
+                  <p>
+                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in apiece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="divider--invisible"></div>
+          <div class="row">
+            <h6>Multiple accordion</h6>
+            <div class="divider"></div>
+            <div class="accordion" data-accordion="multiple">
+              <div class="accordion__header">Click me
+                <div class="accordion__content">
+                  <p>
+                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in apiece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                </div>
+              </div>
+              <div class="accordion__header">Click me 2
+                <div class="accordion__content">
+                  <p>
+                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in apiece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <h2>Lists</h2>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col--4 col">
+              <h6>Normal list</h6>
+              <div class="divider"></div>
+              <ul class="list">
+                <li class="list__item">List item</li>
+                <li class="list__item">List item</li>
+                <li class="list__item">List item</li>
+                <li class="list__item">List item</li>
+              </ul>
+            </div>
+            <div class="col--4">
+              <h6>List with header</h6>
+              <div class="divider"></div>
+              <ul class="list">
+                <li class="list__header">Join our community</li>
+                <li class="list__item">Comunity</li>
+                <li class="list__item">Blog</li>
+                <li class="list__item">Forum</li>
+                <li class="list__item">Meetups</li>
+              </ul>
+            </div>
+            <div class="col--4">
+              <h6>Horizontal list</h6>
+              <div class="divider"></div>
+              <ul class="list--horizontal">
+                <li class="list__item">Home</li>
+                <li class="list__item">About</li>
+                <li class="list__item">Portfolio</li>
+                <li class="list__item">Contact</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <h2> Avatar</h2>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col--4">
+              <h6>Small size image</h6>
+              <div class="avatar--small"><img src="img/avatar/avatar.jpg" alt="Stefan Lazarevic"/></div>
+            </div>
+            <div class="col--4">
+              <h6>Normal size image</h6>
+              <div class="avatar"><img src="img/avatar/avatar.jpg" alt="Stefan Lazarevic"/></div>
+            </div>
+            <div class="col--4">
+              <h6>Large size image</h6>
+              <div class="avatar--large"><img src="img/avatar/avatar.jpg" alt="Stefan Lazarevic"/></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="divider"></div>
+            <div class="col--4">
+              <h6>Small size image round</h6>
+              <div class="avatar-small--round"><img src="img/avatar/avatar.jpg" alt="Stefan Lazarevic"/></div>
+            </div>
+            <div class="col--4">
+              <h6>Normal size image round</h6>
+              <div class="avatar--round"><img src="img/avatar/avatar.jpg" alt="Stefan Lazarevic"/></div>
+            </div>
+            <div class="col--4">
+              <h6>Large size image round</h6>
+              <div class="avatar-large--round"><img src="img/avatar/avatar.jpg" alt="Stefan Lazarevic"/></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="divider"></div>
+            <div class="col--6">
+              <h6>Image uploader</h6>
+              <div class="avatar--large" data-avatar-upload="true"><img src="img/avatar/avatar.jpg" alt="Stefan Lazarevic"/></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <h2>Form element</h2>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="form__group">
+              <label class="form__label" for="normal">Normal input</label>
+              <input class="form__input" type="text" id="normal" name="normal"/>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="password">Password input</label>
+              <input class="form__input--password" type="password" placeholder="Password" id="password" name="password"/>
+            </div>
+            <div class="form__group-icon--left">
+              <input class="form__input" type="email" placeholder="Email with icon" id="input__left" name="input__left"/>
+              <div class="icon icon--mail"></div>
+            </div>
+            <div class="form__group-icon--right">
+              <input class="form__input" type="email" placeholder="Email with icon" id="input__right" name="input__right"/>
+              <div class="icon icon--mail"></div>
+            </div>
+            <div class="form__group form--error">
+              <input class="form__input--password" type="text" placeholder="Validation input"/><span class="form__validation">This is form input with validation triggered.</span>
+            </div>
+            <div class="form__group">
+              <select class="form__select" id="select">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </select>
+              <div class="form-select__arrow"></div>
+            </div>
+            <div class="form__group">
+              <input class="form__checkbox" type="checkbox" id="checkbox"/>
+              <label for="checkbox">Remember me</label>
+            </div>
+            <form class="form">
+              <div class="form__group">
+                <input class="form__radio" type="radio" id="radio1" name="radio"/>
+                <label for="radio1">Item 1</label>
+                <input class="form__radio" type="radio" id="radio2" name="radio"/>
+                <label for="radio2">Item 2</label>
+              </div>
+              <div class="form__group">
+                <input class="form__switch" type="checkbox" id="switch"/>
+                <label for="switch"></label>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <h2>Typography</h2>
+          <div class="divider"></div>
+          <div class="row">
+            <h1>Header 1</h1>
+            <h2>Header 2</h2>
+            <h3>Header 3</h3>
+            <h4>Header 4</h4>
+            <h5>Header 5</h5>
+            <h6>Header 6</h6>
+            <p><span class="text--bold">Lorem ipsum dolor sit amet</span>, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <span class="text--italic">Ut enim ad minim veniam</span>, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </div>
+        <div class="row">
+          <h2>Code presentation editor</h2>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="editor__container">
+              <table class="editor" border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                  <tr>
+                    <td class="code__line"># Your code line.</td>
+                  </tr>
+                  <tr>
+                    <td class="code__line" data-indent="1"># Your indented code line.</td>
+                  </tr>
+                  <tr>
+                    <td class="code__line"><span class="key">var </span>name = <span class="str">"Stefan"</span>;</td>
+                  </tr>
+                  <tr>
+                    <td class="code__line"><span class="key">console</span>.<span class="fun">log</span>(<span class="str">"Hello"</span> + <span class="key">name</span>);</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <h2>Dividers</h2>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col--6">
+              <h6>Normal divider</h6>
+            </div>
+            <div class="col--6">
+              <p>
+                <Lorem>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Lorem>
+                <div class="divider"></div>
+                <Lorem>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Lorem>
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col--6">
+              <h6>Invisible divider</h6>
+            </div>
+            <div class="col--6">
+              <p>
+                <Lorem>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Lorem>
+                <div class="divider--invisible"></div>
+                <Lorem>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Lorem>
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col--6">
+              <h6>Large divider</h6>
+            </div>
+            <div class="col--6">
+              <p>
+                <Lorem>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Lorem>
+                <div class="divider--large"></div>
+                <Lorem>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Lorem>
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col--6">
+              <h6>Large invisible divider</h6>
+            </div>
+            <div class="col--6">
+              <p>
+                <Lorem>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Lorem>
+                <div class="divider-large--invisible"></div>
+                <Lorem>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Lorem>
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col--6">
+              <h6>Divider with text</h6>
+            </div>
+            <div class="col--6">
+              <p>
+                <Lorem>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Lorem>
+                <div class="divider--text">
+                  <div class="divider"></div><span>I can divide two paragraphs</span>
+                </div>
+                <Lorem>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Lorem>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--6">
+            <h6>Large divider with text</h6>
+          </div>
+          <div class="col--6">
+            <p>
+              <Lorem>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Lorem>
+              <div class="divider--text">
+                <div class="divider--large"></div><span>I can divide two paragraphs</span>
+              </div>
+              <Lorem>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Lorem>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <h2>Converter</h2>
+          <div class="row" data-convertor="true">
+            <div class="col--6">
+              <div class="form__group">
+                <label class="form__label" for="din">Dinara</label>
+                <input class="form__input" type="number" id="din"/>
+              </div>
+            </div>
+            <div class="col--6">
+              <div class="form__group">
+                <label class="form__label" for="dol">Dolara</label>
+                <input class="form__input" type="number" id="dol"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row"></div>
+      </div>
+    </main>
+    <footer role="contentinfo">
+      <address></address><small>
+        <time datetime="2017"></time></small>
+    </footer>
+    <script src="./js/app.min.js"></script>
+    <script src="http://localhost:35729/livereload.js"></script>
+    <noscript> Oh no, you either have JavaScript turned off or your browser doesn't support JavaScript.</noscript>
+  </body>
+</html>
