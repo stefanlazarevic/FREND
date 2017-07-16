@@ -2,7 +2,7 @@ const avatar = document.querySelector('[data-avatar-upload="true"]');
 
 const avatar_init = (avatar) => {
   if(!avatar) return;
-  
+
   const upload__input = document.createElement("INPUT");
   upload__input.setAttribute("type", "file");
   upload__input.setAttribute("class", 'avatar__upload');
@@ -31,4 +31,4 @@ const avatar_init = (avatar) => {
 module.exports.avatar = avatar;
 module.exports.avatar_init = avatar_init;
 
-// @TODO Cropping avatar image.
+// @TODO: Cropping avatar image.
